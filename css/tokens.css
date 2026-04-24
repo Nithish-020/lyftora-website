@@ -1,0 +1,90 @@
+/* AUTO-GENERATED — do not edit. Source: design-tokens/tokens.json */
+/* Regenerate with: npm run tokens:build */
+
+:root {
+  /* Palette */
+  --cream: #F4EFE4;
+  --cream-2: #EFE8D8;
+  --ink: #0E0E12;
+  --ink-2: #1A1A22;
+  --muted: #6B6A63;
+  --lime: #D6FF4D;
+  --coral: #FF5A3C;
+  --violet: #7B5CFF;
+  --sky: #6EE0FF;
+  --protein: #FF5A3C;
+  --carbs: #F6D040;
+  --fat: #7B5CFF;
+
+  /* Fonts */
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans:  "Space Grotesk", system-ui, sans-serif;
+  --mono:  "Geist Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --container: 1320px;
+  --pad: clamp(16px, 4vw, 40px);
+
+  /* Radii */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 48px;
+  --r-pill: 999px;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  /* Shadows */
+  --sh-sm: 0 4px 10px -4px rgba(0,0,0,.12);
+  --sh-md: 0 14px 26px -14px rgba(0,0,0,.18);
+  --sh-lg: 0 40px 60px -30px rgba(0,0,0,.25);
+  --sh-glow: 0 0 24px color-mix(in srgb, #D6FF4D 50%, transparent);
+
+  /* Theme (default: light) */
+  --theme-bg: #F4EFE4;
+  --theme-surface: #EFE8D8;
+  --theme-surface-alt: #F4EFE4;
+  --theme-text: #0E0E12;
+  --theme-text-muted: #6B6A63;
+  --theme-text-inverse: #F4EFE4;
+  --theme-inverse-bg: #0E0E12;
+  --theme-inverse-surface: #1A1A22;
+  --theme-primary: #0E0E12;
+  --theme-primary-on: #F4EFE4;
+  --theme-accent: #D6FF4D;
+  --theme-accent-on: #0E0E12;
+  --theme-danger: #FF5A3C;
+  --theme-danger-on: #F4EFE4;
+  --theme-border: #0E0E12;
+  --theme-border-subtle: #6B6A63;
+  --theme-focus-ring: #D6FF4D;
+}
+
+[data-theme="dark"] {
+  --theme-bg: #0E0E12;
+  --theme-surface: #1A1A22;
+  --theme-surface-alt: #0E0E12;
+  --theme-text: #F4EFE4;
+  --theme-text-muted: #6B6A63;
+  --theme-text-inverse: #0E0E12;
+  --theme-inverse-bg: #F4EFE4;
+  --theme-inverse-surface: #EFE8D8;
+  --theme-primary: #D6FF4D;
+  --theme-primary-on: #0E0E12;
+  --theme-accent: #D6FF4D;
+  --theme-accent-on: #0E0E12;
+  --theme-danger: #FF5A3C;
+  --theme-danger-on: #F4EFE4;
+  --theme-border: #F4EFE4;
+  --theme-border-subtle: #6B6A63;
+  --theme-focus-ring: #D6FF4D;
+}

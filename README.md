@@ -6,19 +6,25 @@ Static marketing site for Lyftora, hosted on Cloudflare Pages.
 
 ```
 /
-├── index.html              # Landing page
-├── pricing.html            # Pricing page
-├── features/
-│   └── coach-ai.html       # Coach AI feature page
-├── legal/                  # Privacy, terms, etc.
+├── index.html                  # Landing page
+├── pricing.html                # Pricing page
+├── lyftora-coach-ai.html       # Coach AI feature page
+├── css/
+│   ├── tokens.css              # Design tokens (colors, spacing, type)
+│   ├── index.css
+│   ├── pricing.css
+│   └── coach-ai.css
+├── js/
+│   ├── index.js
+│   ├── pricing.js
+│   └── coach-ai.js
 ├── assets/
-│   ├── css/                # Shared stylesheets (if extracted)
-│   ├── js/                 # Shared scripts
-│   ├── images/             # Marketing images, screenshots
-│   ├── icons/              # Favicon, app icons
-│   └── fonts/              # Self-hosted fonts (optional)
-├── _headers                # Cloudflare Pages security + cache headers
-├── _redirects              # Cloudflare Pages redirects & SPA fallback
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+├── legal/                      # Privacy, terms (to be added)
+├── _headers                    # Security + cache headers
+├── _redirects                  # Short-URL aliases
 ├── robots.txt
 └── sitemap.xml
 ```
