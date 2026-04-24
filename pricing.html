@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lyftora — Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F4EFE4; --cream-2:#EFE8D8; --ink:#0E0E12; --ink-2:#1A1A22;
+  --lime:#D6FF4D; --coral:#FF5A3C; --violet:#7B5CFF; --sky:#6EE0FF;
+  --muted:#6B6A63; --line:rgba(14,14,18,.1);
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Space Grotesk",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --container:1280px; --pad:clamp(16px,4vw,40px);
+  --r-md:20px; --r-lg:28px; --r-xl:48px; --r-pill:999px;
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:clip}
+img,svg{display:block;max-width:100%}
+button,input{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--lime);color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+
+.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--pad)}
+
+/* Switcher */
+.swap{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:90;display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);box-shadow:0 12px 30px -10px rgba(0,0,0,.15)}
+.swap a{font-size:11px;font-weight:600;letter-spacing:.04em;padding:8px 14px;border-radius:999px;color:#555}
+.swap a.on{background:var(--ink);color:var(--cream)}
+
+/* Nav */
+.nav{position:fixed;top:14px;left:14px;right:14px;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:10px 12px 10px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(244,239,228,.78);backdrop-filter:blur(14px)}
+.brand{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.02em;display:inline-flex;align-items:baseline;gap:2px}
+.brand em{font-style:italic;color:var(--coral)}
+.nav-links{display:none;gap:24px;font-size:14px;font-weight:500;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+@media(min-width:820px){.nav-links{display:inline-flex}}
+.nav-cta{font-size:13px;font-weight:700;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--cream);transition:transform .2s,background .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--coral);transform:translateY(-1px)}
+
+/* Hero */
+.hero{padding:140px 0 40px;text-align:center;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:p 1.6s infinite}
+@keyframes p{50%{transform:scale(1.4);opacity:.5}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10vw,148px);line-height:.92;letter-spacing:-.03em;margin:24px 0 20px;max-width:16ch;margin-inline:auto}
+.hero h1 em{font-style:italic;color:var(--coral)}
+.hero h1 .crossed{position:relative;display:inline-block;color:var(--muted)}
+.hero h1 .crossed::after{content:"";position:absolute;left:-4%;right:-4%;top:54%;height:6px;background:var(--coral);border-radius:4px;transform:rotate(-3deg) scaleX(0);transform-origin:left;animation:cross 1s .5s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes cross{to{transform:rotate(-3deg) scaleX(1)}}
+.hero p.lead{max-width:56ch;margin-inline:auto;font-size:19px;color:var(--muted)}
+
+/* Billing toggle */
+.bill-toggle{display:inline-flex;padding:5px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.7);margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;position:relative}
+.bill-toggle button{padding:10px 22px;border-radius:999px;color:var(--muted);font-weight:700;transition:color .3s;position:relative;z-index:2}
+.bill-toggle button.on{color:var(--cream)}
+.bill-toggle .slider{position:absolute;top:5px;bottom:5px;left:5px;border-radius:999px;background:var(--ink);transition:transform .5s cubic-bezier(.2,1.6,.4,1),width .5s}
+.save-tag{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--lime);color:var(--ink);font-size:10px;letter-spacing:.06em;font-weight:700}
+
+/* Plans */
+.plans-wrap{padding:40px 0 80px}
+.plans{display:grid;grid-template-columns:1fr;gap:18px;max-width:1120px;margin:0 auto}
+@media(min-width:960px){.plans{grid-template-columns:repeat(3,1fr);gap:16px}}
+
+.plan{position:relative;padding:32px 28px 28px;border-radius:var(--r-lg);background:rgba(255,255,255,.55);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;transition:transform .45s cubic-bezier(.2,1.6,.4,1),box-shadow .4s,border-color .3s;overflow:hidden;backdrop-filter:blur(8px)}
+.plan::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .5s;pointer-events:none}
+.plan:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(0,0,0,.25);border-color:var(--ink)}
+.plan:hover::before{opacity:.12}
+
+/* Plan 1 — starter */
+.plan.starter::before{background:radial-gradient(600px 400px at 20% -10%,var(--sky),transparent 60%)}
+/* Plan 2 — featured */
+.plan.pro{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateY(-14px);box-shadow:0 40px 80px -30px rgba(0,0,0,.4)}
+.plan.pro:hover{transform:translateY(-22px)}
+.plan.pro::before{background:radial-gradient(600px 400px at 80% -10%,var(--coral),transparent 55%);opacity:.22}
+.plan.pro:hover::before{opacity:.32}
+.plan.pro .p-muted{color:rgba(244,239,228,.6)}
+.plan.pro .feat li{color:var(--cream)}
+/* Plan 3 */
+.plan.team::before{background:radial-gradient(600px 400px at 80% -10%,var(--violet),transparent 60%)}
+
+.tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2deg);padding:6px 14px;border-radius:999px;background:var(--lime);color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 20px -8px rgba(0,0,0,.25);animation:wobble 3s ease-in-out infinite}
+@keyframes wobble{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(2deg)}}
+
+.p-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.p-name{font-family:var(--serif);font-style:italic;font-size:34px;font-weight:400;letter-spacing:-.02em;line-height:1}
+.p-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:24px;border:1px solid var(--line);background:rgba(255,255,255,.6)}
+.plan.pro .p-icon{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:var(--cream)}
+
+.p-tagline{color:var(--muted);font-size:14.5px}
+.plan.pro .p-tagline{color:rgba(244,239,228,.7)}
+
+.p-price{display:flex;align-items:baseline;gap:8px;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+.p-price .num{font-family:var(--serif);font-weight:400;font-size:72px;line-height:.9;letter-spacing:-.04em;position:relative}
+.p-price .num .prefix{font-size:26px;vertical-align:top;position:relative;top:8px;margin-right:1px;opacity:.7}
+.p-price .suffix{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.plan.pro .p-price .suffix{color:rgba(244,239,228,.6)}
+.p-price .yearly-note{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.04em}
+
+/* animated number: roll effect */
+.num-roll{display:inline-flex;overflow:hidden;vertical-align:baseline}
+.num-roll .digit{display:inline-flex;flex-direction:column;transition:transform .55s cubic-bezier(.2,1.4,.3,1);font-family:var(--serif);font-weight:400;letter-spacing:-.04em}
+.num-roll .digit span{height:1em;line-height:1;display:block}
+
+/* CTA */
+.p-cta{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:14px 20px;border-radius:999px;background:var(--ink);color:var(--cream);font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:transform .3s cubic-bezier(.2,1.8,.4,1),background .3s}
+.p-cta:hover{transform:scale(1.03) translateY(-1px);background:var(--coral)}
+.plan.pro .p-cta{background:var(--lime);color:var(--ink)}
+.plan.pro .p-cta:hover{background:var(--coral);color:var(--cream)}
+.plan.team .p-cta{background:var(--violet);color:var(--cream)}
+.plan.team .p-cta:hover{background:var(--ink)}
+
+/* feature list */
+.feat{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.feat li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.45;color:var(--ink);opacity:0;transform:translateX(-8px);animation:featIn .5s cubic-bezier(.2,1.4,.3,1) forwards}
+.feat li:nth-child(1){animation-delay:.05s}.feat li:nth-child(2){animation-delay:.1s}.feat li:nth-child(3){animation-delay:.15s}.feat li:nth-child(4){animation-delay:.2s}.feat li:nth-child(5){animation-delay:.25s}.feat li:nth-child(6){animation-delay:.3s}.feat li:nth-child(7){animation-delay:.35s}.feat li:nth-child(8){animation-delay:.4s}
+@keyframes featIn{to{opacity:1;transform:none}}
+.feat .ic{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.feat .ic.on{background:var(--coral);color:var(--cream)}
+.plan.starter .feat .ic.on{background:var(--sky);color:var(--ink)}
+.plan.pro .feat .ic.on{background:var(--lime);color:var(--ink)}
+.plan.team .feat .ic.on{background:var(--violet);color:var(--cream)}
+.feat .ic.off{background:rgba(14,14,18,.08);color:var(--muted)}
+.plan.pro .feat .ic.off{background:rgba(255,255,255,.08);color:rgba(244,239,228,.4)}
+.feat li.off{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(107,106,99,.4)}
+.plan.pro .feat li.off{color:rgba(244,239,228,.35)}
+.feat .badge{display:inline-block;padding:1px 8px;border-radius:999px;background:var(--lime);color:var(--ink);font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-left:6px}
+.plan.pro .feat .badge{background:var(--coral);color:var(--cream)}
+
+/* section: all features comparison */
+.compare-wrap{padding:80px 0 40px;background:var(--ink);color:var(--cream);border-radius:var(--r-xl);margin:0 12px;position:relative;overflow:hidden}
+.compare-wrap::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 400px at 10% 0%,rgba(123,92,255,.3),transparent 60%),
+  radial-gradient(700px 400px at 90% 100%,rgba(255,90,60,.3),transparent 60%);
+  pointer-events:none}
+.compare{max-width:1120px;margin:0 auto;padding-inline:var(--pad);position:relative;z-index:2}
+.compare h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,80px);line-height:.95;letter-spacing:-.03em;margin-bottom:12px;max-width:18ch}
+.compare h2 em{font-style:italic;color:var(--coral)}
+.compare .sub{color:rgba(244,239,228,.6);font-size:17px;margin-bottom:40px;max-width:60ch}
+.cmp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px}
+.cmp-table thead th{text-align:left;padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.12);vertical-align:bottom}
+.cmp-table tbody th{text-align:left;padding:14px 16px;font-weight:500;color:rgba(244,239,228,.85);border-bottom:1px solid rgba(255,255,255,.06)}
+.cmp-table td{text-align:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(244,239,228,.85);font-family:var(--mono);font-size:13px}
+.cmp-table tbody tr{transition:background .25s}
+.cmp-table tbody tr:hover{background:rgba(255,255,255,.04)}
+.cmp-table .col-name{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400;display:block}
+.cmp-table .col-kicker{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,239,228,.5);font-weight:500}
+.cmp-table .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,228,.45);padding-top:22px!important;padding-bottom:8px!important;border:none!important;font-weight:500}
+.yes{color:var(--lime);font-weight:700}
+.no{color:rgba(244,239,228,.25)}
+.cmp-table .hl{background:rgba(214,255,77,.06)}
+.cmp-table .hl th,.cmp-table .hl td{border-color:rgba(214,255,77,.1)}
+
+/* FAQ */
+.faq-wrap{padding:100px 0}
+.faq-head{text-align:center;max-width:640px;margin:0 auto 40px}
+.faq-head h2{font-family:var(--serif);font-size:clamp(40px,6vw,72px);line-height:.95;letter-spacing:-.03em;margin-bottom:12px;font-weight:400}
+.faq-head h2 em{font-style:italic;color:var(--coral)}
+.faq-grid{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:background .25s}
+.faq[open]{background:#fff}
+.faq summary{padding:20px 24px;cursor:pointer;font-family:var(--serif);font-size:22px;font-weight:400;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:28px;color:var(--coral);transition:transform .3s}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 24px 22px;color:var(--muted);font-size:15px;max-width:64ch}
+
+/* final CTA */
+.final{padding:80px 0 100px;text-align:center}
+.final h2{font-family:var(--serif);font-size:clamp(48px,8vw,120px);line-height:.95;letter-spacing:-.03em;font-weight:400;max-width:18ch;margin-inline:auto;margin-bottom:18px}
+.final h2 em{font-style:italic;color:var(--coral)}
+.final .cta-row{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .3s cubic-bezier(.2,1.8,.4,1)}
+.btn-primary{background:var(--ink);color:var(--cream)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03);background:var(--coral)}
+.btn-ghost{background:rgba(255,255,255,.6);border:1px solid var(--line)}
+.btn-ghost:hover{background:#fff;transform:translateY(-2px) scale(1.03)}
+
+/* Footer */
+footer{padding:60px 0 40px;border-top:1px solid var(--line)}
+.foot-word{font-family:var(--serif);font-weight:400;font-size:clamp(80px,18vw,260px);letter-spacing:-.04em;line-height:.9}
+.foot-word em{font-style:italic;color:var(--coral)}
+.foot-row{margin-top:30px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:12px}
+
+/* reveal */
+.reveal{opacity:1;transform:none}
+
+/* confetti */
+.confetti{position:fixed;pointer-events:none;width:10px;height:14px;z-index:99;border-radius:2px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="brand">Lyft<em>ora</em></a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#coach">Coach</a>
+    <a href="pricing.html" style="color:var(--ink)">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+  </div>
+  <a href="#plans" class="nav-cta">Start free</a>
+</nav>
+
+<div class="swap">
+  <a href="index.html">V0</a>
+  <a href="neo.html">Neo</a>
+  <a href="studio.html">Studio</a>
+  <a href="pricing.html" class="on">Pricing</a>
+</div>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span>Membership · Cancel anytime</span>
+    <h1>One plan away from your <em>strongest</em> <br/><span class="crossed">average</span> self.</h1>
+    <p class="lead">Start free. Upgrade when you're ready. Every tier unlocks more of the coach — never more of the fine print.</p>
+
+    <div class="bill-toggle" role="tablist">
+      <div class="slider" id="bt-slider"></div>
+      <button class="on" data-bill="month">Monthly</button>
+      <button data-bill="year">Yearly <span class="save-tag">Save 30%</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="plans-wrap" id="plans">
+  <div class="container">
+    <div class="plans">
+
+      <!-- STARTER -->
+      <article class="plan starter reveal">
+        <div class="p-head">
+          <div>
+            <div class="p-name">Starter</div>
+            <div class="p-tagline" style="margin-top:6px">Build the habit. Log every lift. Free — forever.</div>
+          </div>
+          <div class="p-icon">○</div>
+        </div>
+
+        <div class="p-price">
+          <div class="num"><span class="prefix">₹</span><span class="num-roll" data-val="0" data-val-y="0">0</span></div>
+          <div class="suffix" data-suffix>/month</div>
+        </div>
+        <span class="yearly-note" data-note>No credit card. No clock.</span>
+
+        <a href="#" class="p-cta" data-confetti>Start free →</a>
+
+        <ul class="feat">
+          <li><span class="ic on">✓</span>Unlimited workout logging</li>
+          <li><span class="ic on">✓</span>Streak &amp; PR tracking (basic)</li>
+          <li><span class="ic on">✓</span>100 essential foods</li>
+          <li><span class="ic on">✓</span>3 coach messages / week</li>
+          <li class="off"><span class="ic off">—</span>AI-generated weekly plan</li>
+          <li class="off"><span class="ic off">—</span>Full 1000+ food library</li>
+          <li class="off"><span class="ic off">—</span>Adaptive periodization</li>
+          <li class="off"><span class="ic off">—</span>Shared training board</li>
+        </ul>
+      </article>
+
+      <!-- PRO (featured) -->
+      <article class="plan pro reveal">
+        <span class="tag">Most loved</span>
+        <div class="p-head">
+          <div>
+            <div class="p-name">Pro</div>
+            <div class="p-tagline p-muted" style="margin-top:6px">Your full-time AI coach. Unlimited chat. Adaptive plans.</div>
+          </div>
+          <div class="p-icon">✦</div>
+        </div>
+
+        <div class="p-price">
+          <div class="num"><span class="prefix">₹</span><span class="num-roll" data-val="299" data-val-y="209">299</span></div>
+          <div class="suffix" data-suffix>/month</div>
+        </div>
+        <span class="yearly-note p-muted" data-note>Billed monthly · Cancel in two taps</span>
+
+        <a href="#" class="p-cta" data-confetti>Go Pro →</a>
+
+        <ul class="feat">
+          <li><span class="ic on">✓</span><b>Everything in Starter</b></li>
+          <li><span class="ic on">✓</span>Unlimited coach chat <span class="badge">Real-time</span></li>
+          <li><span class="ic on">✓</span>Full 1000+ food library (global + regional)</li>
+          <li><span class="ic on">✓</span>Adaptive weekly planning</li>
+          <li><span class="ic on">✓</span>Full streak engine + rest tokens</li>
+          <li><span class="ic on">✓</span>24 achievement badges</li>
+          <li><span class="ic on">✓</span>Wearable sync (Apple, Fitbit, Garmin)</li>
+          <li><span class="ic on">✓</span>Every future update, included</li>
+        </ul>
+      </article>
+
+      <!-- TEAM -->
+      <article class="plan team reveal">
+        <div class="p-head">
+          <div>
+            <div class="p-name">Team</div>
+            <div class="p-tagline" style="margin-top:6px">For small squads, families &amp; gym partners. Up to 5 people.</div>
+          </div>
+          <div class="p-icon">✧</div>
+        </div>
+
+        <div class="p-price">
+          <div class="num"><span class="prefix">₹</span><span class="num-roll" data-val="799" data-val-y="559">799</span></div>
+          <div class="suffix" data-suffix>/month</div>
+        </div>
+        <span class="yearly-note" data-note>5 seats · Billed to one card</span>
+
+        <a href="#" class="p-cta" data-confetti>Start Team →</a>
+
+        <ul class="feat">
+          <li><span class="ic on">✓</span><b>Everything in Pro</b></li>
+          <li><span class="ic on">✓</span>Up to 5 seats</li>
+          <li><span class="ic on">✓</span>Shared training board</li>
+          <li><span class="ic on">✓</span>Group streak &amp; leaderboard <span class="badge">New</span></li>
+          <li><span class="ic on">✓</span>Group PR wall</li>
+          <li><span class="ic on">✓</span>Priority coach response (&lt;30s)</li>
+          <li><span class="ic on">✓</span>Admin dashboard &amp; billing</li>
+          <li><span class="ic on">✓</span>Monthly group check-in call</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="compare-wrap">
+  <div class="compare reveal">
+    <span style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,228,.55)">—— Compare every feature</span>
+    <h2 style="margin-top:12px">Know what you get <em>before</em> you pay.</h2>
+    <p class="sub">No asterisks. No "contact sales". Every row below is exactly what you unlock.</p>
+
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th style="width:38%">&nbsp;</th>
+          <th><span class="col-kicker">Free</span><span class="col-name">Starter</span></th>
+          <th class="hl"><span class="col-kicker" style="color:var(--lime)">Most loved</span><span class="col-name">Pro</span></th>
+          <th><span class="col-kicker">Squads</span><span class="col-name">Team</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat" colspan="4">Training</td></tr>
+        <tr><th>Workout logging</th><td>Unlimited</td><td class="hl">Unlimited</td><td>Unlimited</td></tr>
+        <tr><th>AI workout plans</th><td class="no">—</td><td class="hl yes">Adaptive, weekly</td><td class="yes">Adaptive + shared</td></tr>
+        <tr><th>Exercise library</th><td>120 moves</td><td class="hl">600+ moves + form cues</td><td>600+ moves + form cues</td></tr>
+        <tr><th>Periodization &amp; deloads</th><td class="no">—</td><td class="hl yes">Auto</td><td class="yes">Auto</td></tr>
+
+        <tr><td class="cat" colspan="4">AI Coach</td></tr>
+        <tr><th>Coach messages</th><td>3 / week</td><td class="hl yes">Unlimited</td><td class="yes">Unlimited · priority</td></tr>
+        <tr><th>Response time</th><td>Best effort</td><td class="hl">&lt; 2 min</td><td>&lt; 30 sec</td></tr>
+        <tr><th>Memory of your history</th><td>Last 7 days</td><td class="hl yes">Lifetime</td><td class="yes">Lifetime</td></tr>
+        <tr><th>Voice chat (beta)</th><td class="no">—</td><td class="hl yes">✓</td><td class="yes">✓</td></tr>
+
+        <tr><td class="cat" colspan="4">Nutrition</td></tr>
+        <tr><th>Food library</th><td>100 foods</td><td class="hl">1000+ (global + regional)</td><td>1000+ (global + regional)</td></tr>
+        <tr><th>Plate builder &amp; macros</th><td class="yes">✓</td><td class="hl yes">✓ + hidden-fat detection</td><td class="yes">✓ + hidden-fat detection</td></tr>
+        <tr><th>Barcode &amp; photo scan</th><td class="no">—</td><td class="hl yes">✓</td><td class="yes">✓</td></tr>
+        <tr><th>Meal prep plans</th><td class="no">—</td><td class="hl yes">Weekly, auto</td><td class="yes">Family-scaled</td></tr>
+
+        <tr><td class="cat" colspan="4">Progress &amp; Community</td></tr>
+        <tr><th>Streak engine</th><td>Basic</td><td class="hl yes">Full + rest tokens</td><td class="yes">Full + group streak</td></tr>
+        <tr><th>Achievement badges</th><td>6</td><td class="hl">24</td><td>24 + group badges</td></tr>
+        <tr><th>PR wall</th><td>Personal</td><td class="hl">Personal + share card</td><td>Group wall</td></tr>
+        <tr><th>Leaderboard</th><td class="no">—</td><td class="hl no">—</td><td class="yes">Up to 5 people</td></tr>
+
+        <tr><td class="cat" colspan="4">Integrations &amp; admin</td></tr>
+        <tr><th>Wearable sync</th><td>Steps only</td><td class="hl yes">Full (Apple, Fitbit, Garmin, WHOOP)</td><td class="yes">Full</td></tr>
+        <tr><th>Export data (CSV, PDF)</th><td class="no">—</td><td class="hl yes">✓</td><td class="yes">✓</td></tr>
+        <tr><th>Seats</th><td>1</td><td class="hl">1</td><td>5</td></tr>
+        <tr><th>Admin dashboard</th><td class="no">—</td><td class="hl no">—</td><td class="yes">✓</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-wrap">
+  <div class="container">
+    <div class="faq-head reveal">
+      <span style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">—— Honest answers</span>
+      <h2 style="margin-top:10px">Questions, <em>answered.</em></h2>
+    </div>
+    <div class="faq-grid reveal">
+      <details class="faq" open>
+        <summary>Can I cancel anytime?</summary>
+        <div class="a">Yes. Two taps, no phone call, no retention page. Your logs, PRs and plans stay in your account forever — downgrade or come back whenever.</div>
+      </details>
+      <details class="faq">
+        <summary>What happens on the free plan?</summary>
+        <div class="a">Free is genuinely free. You log workouts, track streaks, and get 3 coach messages a week. No trial timer. Most people start here and upgrade when the coach starts paying for itself.</div>
+      </details>
+      <details class="faq">
+        <summary>Is yearly actually 30% off?</summary>
+        <div class="a">Yes — ₹209/mo on Pro instead of ₹299. Billed once a year as ₹2,499. Swap to yearly anytime and we prorate the difference.</div>
+      </details>
+      <details class="faq">
+        <summary>Who uses Team?</summary>
+        <div class="a">Couples training together, families sharing meal plans, small gym squads, coaches running a 5-person program. Everyone gets their own Pro account — the payer just gets one bill and a shared board.</div>
+      </details>
+      <details class="faq">
+        <summary>Do you store my health data?</summary>
+        <div class="a">Encrypted end-to-end. We never sell it. You can export everything as CSV or delete your account (and all data) from settings in one tap.</div>
+      </details>
+      <details class="faq">
+        <summary>Student or military discount?</summary>
+        <div class="a">50% off Pro for students, teachers, active military and first responders. Verify with ID.me, get a code, apply it at checkout.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <span style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">—— Still here?</span>
+    <h2 style="margin-top:12px">Train smarter. <em>Starting today.</em></h2>
+    <div class="cta-row">
+      <a href="#plans" class="btn btn-primary" data-confetti>Start free →</a>
+      <a href="index.html#coach" class="btn btn-ghost">Try the coach</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-word">Lyft<em>ora.</em></div>
+    <div class="foot-row">
+      <span>© 2026 Lyftora · Built for the next rep.</span>
+      <span>pricing · v2</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+// reveal — no-op; content visible by default
+
+// Billing toggle with sliding pill and number roll
+(()=>{
+  const toggle=document.querySelector('.bill-toggle');
+  const btns=toggle.querySelectorAll('button');
+  const slider=document.getElementById('bt-slider');
+  const nums=document.querySelectorAll('.num-roll');
+  const suffixes=document.querySelectorAll('[data-suffix]');
+  const notes=document.querySelectorAll('[data-note]');
+
+  function positionSlider(btn){
+    const tr=toggle.getBoundingClientRect();
+    const r=btn.getBoundingClientRect();
+    slider.style.width=r.width+'px';
+    slider.style.transform=`translateX(${r.left-tr.left-5}px)`;
+  }
+
+  function rollNumber(el,to){
+    const from=parseInt(el.textContent,10)||0;
+    const dur=650;const s=performance.now();
+    function step(t){
+      const pr=Math.min(1,(t-s)/dur);
+      const e=1-Math.pow(1-pr,3);
+      const v=Math.round(from+(to-from)*e);
+      el.textContent=v.toLocaleString('en-IN');
+      if(pr<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function apply(bill){
+    const yr=bill==='year';
+    nums.forEach(n=>{
+      const to=parseInt(yr?n.dataset.valY:n.dataset.val,10);
+      rollNumber(n,to);
+    });
+    suffixes.forEach(s=>s.textContent=yr?'/mo · billed yearly':'/month');
+    notes.forEach((n,i)=>{
+      if(i===0)n.textContent=yr?'No card · Stays free forever':'No credit card. No clock.';
+      else if(i===1)n.textContent=yr?'Billed ₹2,499/year · Save ₹1,089':'Billed monthly · Cancel in two taps';
+      else n.textContent=yr?'₹6,708/year · 5 seats':'5 seats · Billed to one card';
+    });
+  }
+
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    positionSlider(b);apply(b.dataset.bill);
+  }));
+
+  // init
+  window.addEventListener('load',()=>positionSlider(toggle.querySelector('.on')));
+  window.addEventListener('resize',()=>positionSlider(toggle.querySelector('.on')));
+  setTimeout(()=>positionSlider(toggle.querySelector('.on')),50);
+})();
+
+// Confetti on CTAs
+(()=>{
+  const colors=['#D6FF4D','#FF5A3C','#7B5CFF','#6EE0FF','#F4EFE4','#0E0E12'];
+  function burst(x,y){
+    for(let i=0;i<28;i++){
+      const c=document.createElement('div');c.className='confetti';
+      c.style.background=colors[i%colors.length];
+      c.style.left=x+'px';c.style.top=y+'px';
+      document.body.appendChild(c);
+      const ang=Math.random()*Math.PI*2;
+      const v=260+Math.random()*240;
+      const dx=Math.cos(ang)*v;const dy=Math.sin(ang)*v - 140;
+      const rot=(Math.random()*720-360);
+      c.animate([
+        {transform:'translate(0,0) rotate(0)',opacity:1},
+        {transform:`translate(${dx}px,${dy+460}px) rotate(${rot}deg)`,opacity:0}
+      ],{duration:1100+Math.random()*400,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});
+      setTimeout(()=>c.remove(),1600);
+    }
+  }
+  document.querySelectorAll('[data-confetti]').forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      const r=btn.getBoundingClientRect();
+      burst(r.left+r.width/2,r.top+r.height/2);
+    });
+  });
+})();
+
+// magnetic nudge on CTAs
+(()=>{
+  document.querySelectorAll('.p-cta,.btn-primary,.nav-cta').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      const x=(e.clientX-r.left-r.width/2)*.25;
+      const y=(e.clientY-r.top-r.height/2)*.25;
+      btn.style.transform=`translate(${x}px,${y}px)`;
+    });
+    btn.addEventListener('mouseleave',()=>btn.style.transform='');
+  });
+})();
+</script>
+</body>
+</html>
