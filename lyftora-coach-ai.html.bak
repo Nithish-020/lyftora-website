@@ -1,0 +1,663 @@
+<!doctype html>
+<!--
+  Page: Lyftora Coach AI — Editorial Landing (v2)
+  Design system: Lyftora DS v1.0
+  Build date: 2026-04-23
+  Sections: Header · Hero · Expert Index · Manuscript (How) · Storyboard (Features) · Volume Chart · Phone Chat · Live Calculator · Safety · Price Chart · FAQ · Final · Footer
+  Deviations: Card-grid minimized in favor of editorial typographic composition. One "card-like" container is the phone chat frame.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lyftora Coach AI — A coach who actually remembers your last injury.</title>
+<meta name="description" content="Lyftora Coach AI: six experts in one. Medical-grade screening. Pantry-first nutrition. 4-week progressive plans. Pay once."/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lyftora.in/" />
+<meta property="og:title" content="Lyftora — Train smarter. Pay once. Lift forever." />
+<meta property="og:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<meta property="og:image" content="https://lyftora.in/assets/images/lyftora-preview-thumbnail.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Lyftora logo with tagline: Train smarter. Pay once. Lift forever." />
+
+<!-- coach-ai page -->
+<meta property="og:url" content="https://lyftora.in/lyftora-coach-ai.html" />
+<meta property="og:title" content="Lyftora Coach AI — Your personal training intelligence" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lyftora — Train smarter. Pay once. Lift forever." />
+<meta name="twitter:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<meta name="twitter:image" content="https://lyftora.in/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/coach-ai.css"/>
+<link rel="stylesheet" href="css/navbar.css"/>
+</head>
+<body>
+
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-top">
+      <div class="meta"><b>LYFTORA / COACH AI</b> · EDITION 2026<br/>VERSION 1.0 · EDITORIAL</div>
+      <span class="eyebrow"><span class="new">NEW</span><span class="body">Coach AI · inside Lyftora</span></span>
+    </div>
+
+    <h1>
+      <span class="l1">A coach who</span>
+      <span class="l2">actually <em>remembers</em></span>
+      <span class="l3">your last injury.</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <div>
+        <p class="hero-lead">Six experts in one. Certified trainer. Registered dietitian. Sports medicine. Clinical coach. Behavioral psychologist. Sport conditioning. <b>Trained on real medical screening, your real pantry, and your real schedule.</b></p>
+        <div class="cta-row">
+          <a href="#get" class="btn btn-primary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
+          <a href="#how" class="btn btn-ghost">See how it thinks <span class="arc" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Key numbers">
+        <div class="hero-scoreboard">
+          <div class="row"><small>Experts in one</small><b>06</b></div>
+          <div class="row"><small>Conditions handled</small><b>13</b></div>
+          <div class="row"><small>Work-type profiles</small><b>12</b></div>
+          <div class="row"><small>Weeks / plan</small><b><em>04</em></b></div>
+          <div class="row"><small>Price</small><b>Once</b></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Pay once. Lift forever.</span>
+        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Pay once. Lift forever.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERT INDEX -->
+<section class="sec" id="experts" aria-label="The six experts">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>Six <em>experts.</em> One coach.</h2>
+      <div class="nb">
+        <span class="kicker">Contents / Index</span>
+        <p class="sub">Coach AI isn't a single model with a fitness wrapper. It's six certified roles, each with its own rules, its own refusals, its own checks — assembled into one plan.</p>
+      </div>
+    </div>
+
+    <div class="index reveal">
+      <article class="idx-row">
+        <span class="n">N° 01</span>
+        <span class="name">Trainer</span>
+        <span class="body"><span class="credential">CPT · CERTIFIED</span><br/>Movement patterns, periodization, progression. Plans you can actually execute in the gym you already go to.</span>
+        <span class="go">Programming</span>
+      </article>
+      <article class="idx-row">
+        <span class="n">N° 02</span>
+        <span class="name">Nutritionist</span>
+        <span class="body"><span class="credential">RDN · REGISTERED DIETITIAN</span><br/>Macros, micros, hydration. Rules the way a clinic would write them, not the way an influencer would tweet them.</span>
+        <span class="go">Nutrition</span>
+      </article>
+      <article class="idx-row">
+        <span class="n">N° 03</span>
+        <span class="name">Sports Medicine</span>
+        <span class="body"><span class="credential">SMS · SPECIALIST</span><br/>Injury screening, contraindications, return-to-train protocols. Knows what to avoid, and why.</span>
+        <span class="go">Safety</span>
+      </article>
+      <article class="idx-row">
+        <span class="n">N° 04</span>
+        <span class="name">Health Coach</span>
+        <span class="body"><span class="credential">CHC · CLINICAL</span><br/>Condition-specific modifications across 13 chronic conditions. Not generic. Not guessed.</span>
+        <span class="go">Conditions</span>
+      </article>
+      <article class="idx-row">
+        <span class="n">N° 05</span>
+        <span class="name"><em>Behavioral Psych</em></span>
+        <span class="body"><span class="credential">BEHAVIOR · ADHERENCE</span><br/>Habit design, sleep architecture, recovery protocols. Why most plans fail — and why this one won't.</span>
+        <span class="go">Adherence</span>
+      </article>
+      <article class="idx-row">
+        <span class="n">N° 06</span>
+        <span class="name">Sport Conditioning</span>
+        <span class="body"><span class="credential">SSC · SPECIALIST</span><br/>Cricket, football, swimming, running, martial arts. Sport-specific conditioning when you want it.</span>
+        <span class="go">Sport</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MANUSCRIPT — HOW IT WORKS -->
+<section class="sec" id="how" aria-label="How Coach AI works">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>Five steps. <em>Then a plan.</em></h2>
+      <div class="nb">
+        <span class="kicker">Process / Manuscript</span>
+        <p class="sub">No 10-second quiz. Coach AI screens you the way a clinic would — then calculates, then delivers. Skim the rail or scroll down the column.</p>
+      </div>
+    </div>
+
+    <div class="manu-wrap reveal">
+      <nav class="manu-rail" aria-label="Step navigator" id="rail">
+        <button data-step="1" class="on"><span class="d"></span>01 · PROFILE</button>
+        <button data-step="2"><span class="d"></span>02 · SCREENING</button>
+        <button data-step="3"><span class="d"></span>03 · PANTRY</button>
+        <button data-step="4"><span class="d"></span>04 · CALCULATIONS</button>
+        <button data-step="5"><span class="d"></span>05 · PLAN</button>
+      </nav>
+
+      <div class="manu-stream">
+        <article class="manu-step" id="step-1" data-step="1">
+          <div class="left">
+            <div class="step-n">0<em>1</em></div>
+            <h3>Profile.</h3>
+            <p>Age. Sex. Height. Weight. Work type. Daily routine. Current activity. The basics done properly — because a desk-bound IT engineer and a construction worker have different energy budgets, different posture loads, and different recovery capacities. Twelve work-type profiles shape what comes next.</p>
+          </div>
+          <div class="viz" aria-hidden="true">
+            <span class="vlab">PROFILE · LIVE</span>
+            <div class="viz-fill">
+              <div><span>Age</span><span>29</span></div>
+              <div><span>Sex</span><span>F</span></div>
+              <div><span>Height</span><span>164 cm</span></div>
+              <div><span>Weight</span><span>62 kg</span></div>
+              <div><span>Work</span><span>IT · Desk</span></div>
+              <div><span>Activity</span><span>1.375</span></div>
+              <div><span>Sleep</span><span>6.5h</span></div>
+              <div><span>Commute</span><span>45 min</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="manu-step" id="step-2" data-step="2">
+          <div class="left">
+            <div class="step-n">0<em>2</em></div>
+            <h3>Medical screening.</h3>
+            <p>Thirteen condition flags. Medications. Injuries. Allergies. Sleep quality. Cycle status for female users. Required, not optional. Each flag triggers real plan modifications — kidney disease caps protein at 0.6–0.8 g/kg, heart disease blocks HIIT until a clearance flag, pregnancy triggers an OB-GYN referral.</p>
+          </div>
+          <div class="viz" aria-hidden="true">
+            <span class="vlab">MEDICAL · 13 FLAGS</span>
+            <ul class="chk">
+              <li class="ok"><span class="mk">✓</span>Diabetes · negative</li>
+              <li class="ok"><span class="mk">✓</span>Hypertension · negative</li>
+              <li class="risk"><span class="mk">!</span>PCOS · flagged · anti-inflamm protocol</li>
+              <li class="risk"><span class="mk">!</span>Lower back pain · no axial loading</li>
+              <li class="ok"><span class="mk">✓</span>Kidney function · normal</li>
+              <li class="ok"><span class="mk">✓</span>Allergies · none</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="manu-step" id="step-3" data-step="3">
+          <div class="left">
+            <div class="step-n">0<em>3</em></div>
+            <h3>Goals &amp; <em>pantry.</em></h3>
+            <p>Primary goal. Target date. Equipment on hand. Dietary preference. Regional cuisine. And then the question most apps never ask: <b>what foods do you actually have at home?</b> Your plan is built from that list, not an aspirational ingredient sheet you'll abandon by Friday.</p>
+          </div>
+          <div class="viz" aria-hidden="true">
+            <span class="vlab">PANTRY · TYPED</span>
+            <div class="pantry">
+              <div class="prompt">What's in your kitchen right now?</div>
+              <span id="pantry-text">eggs, paneer, oats, brown rice, moong dal, spinach, cucumber, curd, olive oil, almonds</span><span class="cursor"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="manu-step" id="step-4" data-step="4">
+          <div class="left">
+            <div class="step-n">0<em>4</em></div>
+            <h3>Calculations.</h3>
+            <p>BMI. BMR via Mifflin-St Jeor. TDEE with activity multipliers from 1.2 to 1.9. Macro splits by goal. Protein in grams per kilogram. Hydration formula. Heart rate zones via Karvonen. NEAT step targets. <b>Every number shown.</b> No black box.</p>
+          </div>
+          <div class="viz" aria-hidden="true">
+            <span class="vlab">LIVE READOUT</span>
+            <div class="calcbox">
+              <div class="cell"><span>BMR</span><b>1,742<em> kcal</em></b></div>
+              <div class="cell"><span>TDEE</span><b>2,398<em> kcal</em></b></div>
+              <div class="cell"><span>Protein</span><b>168<em> g</em></b></div>
+              <div class="cell"><span>Water</span><b>3.2<em> L</em></b></div>
+              <div class="cell"><span>HR Z2</span><b>128–142</b></div>
+              <div class="cell"><span>NEAT</span><b>9,400</b></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="manu-step" id="step-5" data-step="5">
+          <div class="left">
+            <div class="step-n">0<em>5</em></div>
+            <h3>Plan delivery.</h3>
+            <p>A full 4-week progressive program — Foundation, Build, Push, Deload — with matched nutrition that scales week-on-week. Weekly check-ins. Adjustments based on what worked, what hurt, what moved the number.</p>
+          </div>
+          <div class="viz" aria-hidden="true">
+            <span class="vlab">MONTH · 28 DAYS</span>
+            <div class="cal">
+              <!-- week 1 -->
+              <div class="d w1">M</div><div class="d w1">T</div><div class="d rest">R</div><div class="d w1">T</div><div class="d w1">F</div><div class="d w1">S</div><div class="d rest">R</div>
+              <!-- week 2 -->
+              <div class="d w2">M</div><div class="d w2">T</div><div class="d rest">R</div><div class="d w2">T</div><div class="d w2">F</div><div class="d w2">S</div><div class="d rest">R</div>
+              <!-- week 3 -->
+              <div class="d w3">M</div><div class="d w3">T</div><div class="d rest">R</div><div class="d w3">T</div><div class="d w3">F</div><div class="d w3">S</div><div class="d rest">R</div>
+              <!-- week 4 -->
+              <div class="d w4">M</div><div class="d w4">T</div><div class="d rest">R</div><div class="d w4">T</div><div class="d w4">F</div><div class="d rest">R</div><div class="d rest">R</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORYBOARD — FEATURES -->
+<section class="sec" id="features" aria-label="Features">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>Everything most apps <em>skip.</em></h2>
+      <div class="nb">
+        <span class="kicker">Feature storyboard</span>
+        <p class="sub">The features your last app probably called "premium," then locked behind a yearly subscription. Here they're just how the thing works.</p>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <article class="story-hero">
+        <span class="kicker" style="color:rgba(14,14,18,.55)">— Feature 01 · Pantry-first</span>
+        <h3 style="margin-top:14px">Built from <em>your pantry,</em> not stock photos.</h3>
+        <div class="pantry-live">
+          <div class="prompt">What's in your kitchen right now?</div>
+          <span id="pantry-live-text"></span><span class="cursor" style="background:var(--ink)"></span>
+        </div>
+        <div class="chips">
+          <span>Indian</span><span>South Indian</span><span>North Indian</span><span>Middle Eastern</span><span>East Asian</span><span>Latin</span><span>Western</span><span>Mixed</span>
+        </div>
+      </article>
+
+      <article class="story-cycle">
+        <span class="kicker">— Feature 02 · Cycle-aware</span>
+        <h4>Periodized for <em>female</em> physiology.</h4>
+        <p>Trains and feeds you by cycle phase. Pregnancy and postpartum protocols included — pelvic floor priority, OB-GYN referrals when flagged.</p>
+        <svg class="cycle-svg" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="78" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="var(--coral)" stroke-width="10" stroke-dasharray="120 490" transform="rotate(-90 100 100)" stroke-linecap="round"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="var(--lime)" stroke-width="10" stroke-dasharray="140 490" stroke-dashoffset="-125" transform="rotate(-90 100 100)" stroke-linecap="round"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="var(--violet)" stroke-width="10" stroke-dasharray="90 490" stroke-dashoffset="-270" transform="rotate(-90 100 100)" stroke-linecap="round"/>
+          <text x="100" y="98" text-anchor="middle" style="font-family:var(--serif);font-size:28px;fill:var(--ink);font-style:italic">28</text>
+          <text x="100" y="118" text-anchor="middle">DAYS</text>
+        </svg>
+      </article>
+
+      <article class="story-cond">
+        <span class="kicker" style="color:rgba(244,239,228,.6)">— Feature 03 · Conditions</span>
+        <h4><span class="big">13</span> medical conditions handled — <em style="color:var(--lime);font-style:italic">automatically.</em></h4>
+        <div class="cond-grid">
+          <span>Diabetes T1</span><span>Diabetes T2</span><span>Hypertension</span><span>Heart disease</span><span>Kidney disease</span><span>Osteoporosis</span><span>PCOS</span><span>Pregnancy</span><span>Postpartum</span><span>Post-surgery</span><span>Back / disc</span><span>Asthma</span><span>Thyroid</span>
+        </div>
+      </article>
+
+      <article class="story-hr">
+        <span class="kicker" style="color:rgba(244,239,228,.55)">— Feature 04 · HR zones</span>
+        <h4>Trained in the <em>right zone.</em></h4>
+        <p>Karvonen-computed heart rate zones, shown on every cardio block. No "just go at 70%" guessing.</p>
+        <div class="zones">
+          <div class="z z1"><span class="lab">Z1 · Recovery</span><div class="tr"><i class="fi"></i></div><span class="val">&lt; 114 bpm</span></div>
+          <div class="z z2"><span class="lab">Z2 · Endurance</span><div class="tr"><i class="fi"></i></div><span class="val">114–128</span></div>
+          <div class="z z3"><span class="lab">Z3 · Tempo</span><div class="tr"><i class="fi"></i></div><span class="val">128–142</span></div>
+          <div class="z z4"><span class="lab">Z4 · Threshold</span><div class="tr"><i class="fi"></i></div><span class="val">142–162</span></div>
+          <div class="z z5"><span class="lab">Z5 · VO₂ max</span><div class="tr"><i class="fi"></i></div><span class="val">162–190</span></div>
+        </div>
+      </article>
+
+      <article class="story-sport">
+        <span class="kicker">— Feature 05 · Sport-specific</span>
+        <h4>Conditioning, by your <em>sport.</em></h4>
+        <p>Cricket, football, swimming, running, martial arts — programs adjust for sport-specific demands.</p>
+        <div class="sport-orbit" aria-hidden="true">
+          <span class="tag">Cricket</span>
+          <span class="tag">Football</span>
+          <span class="tag">Swimming</span>
+          <span class="tag">Running</span>
+          <span class="tag">Martial Arts</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUME CHART -->
+<section class="sec" aria-label="4-week volume curve">
+  <div class="container">
+    <div class="vol-wrap reveal">
+      <div class="vol-side">
+        <span class="kicker">—— 28 days</span>
+        <h3 style="margin-top:14px">Plans that <em>change.</em> Not static weeks on repeat.</h3>
+        <p>Real periodization — the way coaches actually program. Not a template you'd find on a printable PDF.</p>
+        <div class="vol-legend">
+          <span>W1 · FOUNDATION</span><span>W2 · BUILD</span><span>W3 · PUSH</span><span>W4 · DELOAD</span>
+        </div>
+      </div>
+      <div class="vol-chart" id="volChart" aria-hidden="true">
+        <svg viewBox="0 0 800 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="volGrad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#D6FF4D" stop-opacity=".65"/>
+              <stop offset="100%" stop-color="#F4EFE4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g class="grid">
+            <line x1="0" y1="60"  x2="800" y2="60"/>
+            <line x1="0" y1="150" x2="800" y2="150"/>
+            <line x1="0" y1="240" x2="800" y2="240"/>
+            <line x1="0" y1="330" x2="800" y2="330"/>
+          </g>
+          <g class="ax">
+            <text x="0"   y="350">DAY 01</text>
+            <text x="200" y="350">DAY 07</text>
+            <text x="400" y="350">DAY 14</text>
+            <text x="600" y="350">DAY 21</text>
+            <text x="780" y="350" text-anchor="end">DAY 28</text>
+          </g>
+          <!-- volume curve: w1 40% → w2 65% → w3 100% → w4 50% deload -->
+          <path class="fill-path" d="M0,252 C70,248 130,200 200,188 C270,175 330,130 400,100 C470,70 530,52 600,60 C670,68 720,190 800,225 L800,330 L0,330 Z"/>
+          <path class="line-path" d="M0,252 C70,248 130,200 200,188 C270,175 330,130 400,100 C470,70 530,52 600,60 C670,68 720,190 800,225"/>
+          <g class="marker" transform="translate(0,252)">
+            <circle r="6"/>
+            <text x="12" y="-10">W1 / FOUNDATION</text>
+            <text x="12" y="8" class="phase">40%</text>
+          </g>
+          <g class="marker" transform="translate(200,188)">
+            <circle r="6"/>
+            <text x="12" y="-10">W2 / BUILD</text>
+            <text x="12" y="8" class="phase">65%</text>
+          </g>
+          <g class="marker peak" transform="translate(400,100)">
+            <circle r="8"/>
+            <text x="14" y="-12">W3 / PUSH</text>
+            <text x="14" y="8" class="phase">100%</text>
+          </g>
+          <g class="marker end" transform="translate(780,225)">
+            <circle r="6"/>
+            <text x="-14" y="-12" text-anchor="end">W4 / DELOAD</text>
+            <text x="-14" y="8" text-anchor="end" class="phase">50%</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE CHAT -->
+<section class="sec" aria-label="Sample conversation">
+  <div class="container">
+    <div class="phone-wrap reveal">
+      <div class="phone-copy">
+        <span class="kicker">— Sample conversation</span>
+        <h3 style="margin-top:14px">Screened first. <em>Programmed second.</em></h3>
+        <p>Coach AI will not generate a plan until it knows your medical history. This is what that actually looks like — recorded from a real session, five lines long.</p>
+        <div class="mini">
+          <div><b>0:04</b>screening question asked</div>
+          <div><b>0:12</b>conditions logged</div>
+          <div><b>0:18</b>pantry captured</div>
+          <div><b>tonight</b>week 1 delivered</div>
+        </div>
+      </div>
+      <div class="phone" id="phone" aria-hidden="true">
+        <div class="phone-screen">
+          <div class="phone-head">
+            <div class="av">L</div>
+            <div class="nm">Coach <em>AI</em></div>
+            <div class="state"><span class="live"></span>READING YOUR MEDICAL HISTORY</div>
+          </div>
+          <div class="phone-stream" id="phone-stream"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE CALCULATOR -->
+<section class="sec" id="calc" aria-label="Live calculator">
+  <div class="container">
+    <div class="calc-wrap reveal">
+      <div>
+        <div class="calc-head">
+          <span class="kicker" style="color:rgba(244,239,228,.6)">— Try the math</span>
+          <h3 style="margin-top:12px">No black box. <em>Every</em> number, live.</h3>
+          <p>Move the sliders. Watch BMR, TDEE, protein, hydration, and heart-rate zones recompute using the same formulas Coach AI uses in-app.</p>
+        </div>
+        <div class="calc-controls">
+          <div class="ctl">
+            <label for="c-age">Age</label><output id="o-age">29</output>
+            <input id="c-age" type="range" min="18" max="70" value="29" aria-label="Age"/>
+          </div>
+          <div class="ctl">
+            <label for="c-kg">Weight · kg</label><output id="o-kg">62</output>
+            <input id="c-kg" type="range" min="40" max="140" value="62" aria-label="Weight in kilograms"/>
+          </div>
+          <div class="ctl">
+            <label for="c-cm">Height · cm</label><output id="o-cm">164</output>
+            <input id="c-cm" type="range" min="140" max="200" value="164" aria-label="Height in centimetres"/>
+          </div>
+          <div class="ctl">
+            <label>Sex</label>
+            <div class="seg" role="radiogroup" aria-label="Sex">
+              <button data-sex="F" class="on" aria-pressed="true">Female</button>
+              <button data-sex="M" aria-pressed="false">Male</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <label>Activity</label>
+            <div class="seg" role="radiogroup" aria-label="Activity level">
+              <button data-act="1.2" aria-pressed="false">Sedentary</button>
+              <button data-act="1.375" class="on" aria-pressed="true">Light</button>
+              <button data-act="1.55" aria-pressed="false">Moderate</button>
+              <button data-act="1.725" aria-pressed="false">High</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <label>Goal</label>
+            <div class="seg" role="radiogroup" aria-label="Goal">
+              <button data-goal="loss" class="on" aria-pressed="true">Loss</button>
+              <button data-goal="maint" aria-pressed="false">Maintain</button>
+              <button data-goal="gain" aria-pressed="false">Gain</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-out" aria-live="polite" aria-label="Calculated results">
+        <div class="calc-out-row"><div class="nm">BMI<small>body mass index</small></div><div class="v" id="r-bmi">23.1<em id="r-bmi-c">healthy</em></div></div>
+        <div class="calc-out-row"><div class="nm">BMR<small>Mifflin–St Jeor</small></div><div class="v" id="r-bmr">1,423<em>kcal</em></div></div>
+        <div class="calc-out-row hl"><div class="nm">TDEE<small>with activity</small></div><div class="v" id="r-tdee">1,957<em>kcal</em></div></div>
+        <div class="calc-out-row"><div class="nm">Target<small>daily intake</small></div><div class="v" id="r-target">1,457<em>kcal</em></div></div>
+        <div class="calc-out-row"><div class="nm">Protein<small>g / day</small></div><div class="v" id="r-prot">124<em>g</em></div></div>
+        <div class="calc-out-row"><div class="nm">Water<small>L / day</small></div><div class="v" id="r-water">2.1<em>L</em></div></div>
+        <div class="calc-out-row"><div class="nm">Max HR<small>220 − age</small></div><div class="v" id="r-hr">191<em>bpm</em></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="sec" id="safety" aria-label="Safety refusals">
+  <div class="container">
+    <div class="safety reveal">
+      <span class="kicker">— Safety · refusals policy</span>
+      <h2 style="margin-top:18px">Built to <span class="will-not">refuse</span><br/>when it <em>should.</em></h2>
+      <div class="refuses">
+        <article class="refuse"><span class="n">R · 01</span><div class="desc">Caloric deficits over <em>500 kcal</em> per day.</div></article>
+        <article class="refuse"><span class="n">R · 02</span><div class="desc">HIIT for cardiovascular patients without a <em>medical clearance</em> flag.</div></article>
+        <article class="refuse"><span class="n">R · 03</span><div class="desc">Generating any plan before <em>medical screening</em> is complete.</div></article>
+        <article class="refuse"><span class="n">R · 04</span><div class="desc">Diagnosing conditions — refers to <em>physicians.</em></div></article>
+        <article class="refuse"><span class="n">R · 05</span><div class="desc">Body shaming. <em>Ever.</em></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE CHART -->
+<section class="sec" aria-label="Price comparison">
+  <div class="container">
+    <div class="pchart-wrap reveal">
+      <div class="pchart-side">
+        <span class="kicker">—— 5 years, one chart</span>
+        <h3 style="margin-top:14px">Same problem. <em>Different math.</em></h3>
+        <p>Five years of a personal trainer buys a small car. Five years of Coach AI is a single invoice you forget you paid.</p>
+        <div class="pchart-key">
+          <div><span class="sw" style="background:var(--coral)"></span><span class="nm">Personal trainer · ₹6k/mo</span><span class="v">₹3,60,000</span></div>
+          <div><span class="sw" style="background:#FF9E5C"></span><span class="nm">Other fitness apps</span><span class="v">₹1,77,000</span></div>
+          <div><span class="sw" style="background:var(--violet)"></span><span class="nm">Chatbot subscriptions</span><span class="v">₹1,20,000</span></div>
+          <div class="winner"><span class="sw" style="background:var(--lime)"></span><span class="nm">Lyftora Coach AI</span><span class="v">₹1,499 · once</span></div>
+        </div>
+      </div>
+      <div class="pchart" id="pchart">
+        <svg viewBox="0 0 700 400" preserveAspectRatio="none">
+          <g class="gx">
+            <line x1="0" y1="80"  x2="700" y2="80"/>
+            <line x1="0" y1="160" x2="700" y2="160"/>
+            <line x1="0" y1="240" x2="700" y2="240"/>
+            <line x1="0" y1="320" x2="700" y2="320"/>
+          </g>
+          <g class="ax">
+            <text x="0"   y="395">YEAR 1</text>
+            <text x="175" y="395">YEAR 2</text>
+            <text x="350" y="395">YEAR 3</text>
+            <text x="525" y="395">YEAR 4</text>
+            <text x="680" y="395" text-anchor="end">YEAR 5</text>
+            <text x="0" y="75" class="annot w">₹ SPEND</text>
+          </g>
+          <!-- Personal trainer: steep line up -->
+          <path class="line l1" d="M0,330 L175,260 L350,190 L525,120 L700,50"/>
+          <!-- Other apps -->
+          <path class="line l2" d="M0,330 L175,298 L350,262 L525,232 L700,198"/>
+          <!-- Chatbot subs -->
+          <path class="line l3" d="M0,330 L175,305 L350,280 L525,255 L700,230"/>
+          <!-- Lyftora flat -->
+          <path class="line lw" d="M0,330 L175,328 L350,326 L525,326 L700,326"/>
+          <text x="680" y="46"  class="annot" text-anchor="end">TRAINER</text>
+          <text x="680" y="194" class="annot" text-anchor="end">APPS</text>
+          <text x="680" y="226" class="annot" text-anchor="end">CHATBOTS</text>
+          <text x="680" y="320" class="annot w" text-anchor="end">LYFTORA · ₹1,499 ONCE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="faq-wrap reveal">
+      <div>
+        <span class="kicker">—— FAQ</span>
+        <h2 style="margin-top:12px">The questions <em>you'd ask</em> over coffee.</h2>
+      </div>
+      <div class="faqs">
+        <details class="faq" open>
+          <summary>Is Coach AI a real trainer or a chatbot?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">It's a clinical engine using six expert role-systems — trainer, dietitian, sports medicine, clinical, behavioral, sport. It refuses to plan without screening, calculates everything openly, and refers serious cases to physicians. A chatbot generates. Coach AI assembles.</div>
+        </details>
+        <details class="faq">
+          <summary>What if I have a medical condition?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">Tell it. Thirteen conditions are handled with automatic plan modifications. Kidney disease caps protein at 0.6–0.8 g/kg. Heart disease blocks HIIT until a clearance flag. Pregnancy triggers OB-GYN referral. Each rule is visible in the plan.</div>
+        </details>
+        <details class="faq">
+          <summary>Does it know Indian and regional foods?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">Yes — Indian, South Indian, North Indian, Middle Eastern, East Asian, Latin, Western, Mixed. Plans are built from your real pantry, in your real cuisine, at your real budget tier.</div>
+        </details>
+        <details class="faq">
+          <summary>Can it adapt my existing diet plan?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">Yes. Share your current plan — Coach AI reviews it for macro balance, calorie accuracy, and gaps, then refines rather than replaces. It respects the work you've already put in.</div>
+        </details>
+        <details class="faq">
+          <summary>What about pregnancy or postpartum?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">Pregnancy triggers an OB-GYN referral — no training programmed without clearance. Postpartum under six months prioritizes pelvic floor and gradual reconditioning.</div>
+        </details>
+        <details class="faq">
+          <summary>Does it work without internet?<span class="icn" aria-hidden="true">+</span></summary>
+          <div class="a">Yes. Plans, calculations, and history live on your device. Train, log, and review without a single bar of signal.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec" id="get" aria-label="Get Lyftora">
+  <div class="container">
+    <div class="final reveal">
+      <div class="container" style="padding:0">
+        <span class="kicker" style="color:rgba(244,239,228,.55)">—— One last thing</span>
+        <h2 style="margin-top:18px">Coach who shows up. Pay <em>once.</em> Lift <em>forever.</em></h2>
+        <div class="cta-row">
+          <a href="#" class="btn btn-secondary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
+          <a href="index.html" class="btn btn-ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)">Read the manifesto <span class="arc" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="foot-word">Coach AI<em>.</em></div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#calc">Calculator</a></li>
+          <li><a href="#safety">Safety</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Coach AI</h5>
+        <ul>
+          <li><a href="#experts">The six experts</a></li>
+          <li><a href="#">Calculations</a></li>
+          <li><a href="#">Conditions handled</a></li>
+          <li><a href="#">Refusals policy</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Manifesto</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Get the app</h5>
+        <ul>
+          <li><a href="#">iOS App Store</a></li>
+          <li><a href="#">Google Play</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 LYFTORA · BUILT FOR THE NEXT REP</span>
+      <span>COACH AI · v1.0 · 2026.04</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/navbar.js" defer></script>
+<script src="js/coach-ai.js" defer></script>
+</body>
+</html>

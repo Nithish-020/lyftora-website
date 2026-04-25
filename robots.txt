@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lyftora.com/sitemap.xml
+Sitemap: https://lyftora.in/sitemap.xml

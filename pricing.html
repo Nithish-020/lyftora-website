@@ -6,11 +6,102 @@
 <title>Lyftora &mdash; Pricing</title>
 <meta name="description" content="Lyftora pricing plans. Start free, upgrade when ready. AI personal trainer for everyone." />
 
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<meta property="og:image" content="https://lyftora.in/assets/images/lyftora-preview-thumbnail.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Lyftora logo with tagline: Train smarter. Pay once. Lift forever." />
+
+<!-- pricing page -->
+<meta property="og:url" content="https://lyftora.in/pricing.html" />
+<meta property="og:title" content="Lyftora Pricing — Pay once. Train forever." />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lyftora — Train smarter. Pay once. Lift forever." />
+<meta name="twitter:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<meta name="twitter:image" content="https://lyftora.in/og-image.png" />
+
+<link rel="canonical" href="https://lyftora.in/pricing" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
 <link rel="stylesheet" href="css/pricing.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lyftora.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": "https://lyftora.in/pricing"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Lyftora",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android, iOS",
+      "url": "https://lyftora.in",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "description": "Build the habit. Log every lift. Free forever.",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "description": "Your full-time AI coach. Unlimited chat. Adaptive plans.",
+          "price": "299",
+          "priceCurrency": "INR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "299",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "month"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Team",
+          "description": "For small squads, families and gym partners. Up to 5 people.",
+          "price": "799",
+          "priceCurrency": "INR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "799",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "month"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
