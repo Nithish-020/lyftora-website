@@ -39,11 +39,26 @@
   const btns = document.querySelectorAll('#rail button');
   if (!steps.length || !btns.length) return;
 
+  function setActiveStep(activeStep) {
+    btns.forEach(b => {
+      const isActive = b.dataset.step === activeStep;
+      b.classList.toggle('on', isActive);
+      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    steps.forEach(s => {
+      const isActive = s.dataset.step === activeStep;
+      if (isActive) {
+        s.removeAttribute('aria-hidden');
+      } else {
+        s.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
   const io = new IntersectionObserver(es => {
     es.forEach(e => {
       if (e.isIntersecting) {
-        const i = e.target.dataset.step;
-        btns.forEach(b => b.classList.toggle('on', b.dataset.step === i));
+        setActiveStep(e.target.dataset.step);
       }
     });
   }, { rootMargin: '-40% 0px -50% 0px' });
@@ -52,10 +67,12 @@
 
   btns.forEach(b => b.addEventListener('click', () => {
     const t = document.getElementById('step-' + b.dataset.step);
-    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (t) {
+      setActiveStep(b.dataset.step);
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }));
 })();
-
 /* ── Pantry typer (storyboard feature block) ── */
 (() => {
   const target = document.getElementById('pantry-live-text');
@@ -211,22 +228,28 @@
   [ageEl, kgEl, cmEl].forEach(i => i.addEventListener('input', compute));
 
   sexBtns.forEach(b => b.addEventListener('click', () => {
-    sexBtns.forEach(x => x.classList.remove('on'));
+    sexBtns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
     b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
+    b.setAttribute('aria-pressed', 'true');
     sex = b.dataset.sex;
     compute();
   }));
 
   actBtns.forEach(b => b.addEventListener('click', () => {
-    actBtns.forEach(x => x.classList.remove('on'));
+    actBtns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
     b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
+    b.setAttribute('aria-pressed', 'true');
     activity = +b.dataset.act;
     compute();
   }));
 
   goalBtns.forEach(b => b.addEventListener('click', () => {
-    goalBtns.forEach(x => x.classList.remove('on'));
+    goalBtns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
     b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
+    b.setAttribute('aria-pressed', 'true');
     goal = b.dataset.goal;
     compute();
   }));

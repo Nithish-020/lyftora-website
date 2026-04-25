@@ -38,15 +38,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
 <link rel="stylesheet" href="css/coach-ai.css"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Lyftora Coach AI",
+  "description": "Six expert roles. Medical screening. Pantry-first nutrition. 4-week progressive plans. Pay once, lift forever.",
+  "url": "https://lyftora.in/lyftora-coach-ai"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is Coach AI a real trainer or a chatbot?","acceptedAnswer":{"@type":"Answer","text":"It\u2019s a clinical engine using six expert role-systems \u2014 trainer, dietitian, sports medicine, clinical, behavioral, sport. It refuses to plan without screening, calculates everything openly, and refers serious cases to physicians."}},
+    {"@type":"Question","name":"What if I have a medical condition?","acceptedAnswer":{"@type":"Answer","text":"Thirteen conditions are handled with automatic plan modifications. Kidney disease caps protein at 0.6\u20130.8 g/kg. Heart disease blocks HIIT until a clearance flag. Pregnancy triggers OB-GYN referral."}},
+    {"@type":"Question","name":"Does it know Indian and regional foods?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 Indian, South Indian, North Indian, Middle Eastern, East Asian, Latin, Western, Mixed. Plans are built from your real pantry, in your real cuisine, at your real budget tier."}},
+    {"@type":"Question","name":"Can it adapt my existing diet plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share your current plan \u2014 Coach AI reviews it for macro balance, calorie accuracy, and gaps, then refines rather than replaces."}},
+    {"@type":"Question","name":"What about pregnancy or postpartum?","acceptedAnswer":{"@type":"Answer","text":"Pregnancy triggers an OB-GYN referral \u2014 no training programmed without clearance. Postpartum under six months prioritizes pelvic floor and gradual reconditioning."}},
+    {"@type":"Question","name":"Does it work without internet?","acceptedAnswer":{"@type":"Answer","text":"Yes. Plans, calculations, and history live on your device. Train, log, and review without a single bar of signal."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lyftora.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Coach AI",
+      "item": "https://lyftora.in/lyftora-coach-ai"
+    }
+  ]
+}
+</script>
 <link rel="stylesheet" href="css/navbar.css"/>
 </head>
 <body>
+<a href="#top" class="skip-link">Skip to main content</a>
 
-
+<!-- HEADER -->
+<header class="bar" aria-label="Site header">
+  <a href="#top" class="brand" aria-label="Lyftora Coach AI home">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="word">Lyftora</span>
+    <span class="stamp">COACH AI</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#experts">Experts</a>
+    <a href="#how">How</a>
+    <a href="#features">Features</a>
+    <a href="#calc">Calculator</a>
+    <a href="#safety">Safety</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a href="#get" class="cta">Get Lyftora <span aria-hidden="true">↗</span></a>
+</header>
 <main id="top">
 
 <!-- HERO -->
-<section class="hero" aria-label="Introduction">
+<section class="hero" id="intro" aria-label="Introduction">
   <div class="container">
     <div class="hero-top">
       <div class="meta"><b>LYFTORA / COACH AI</b> · EDITION 2026<br/>VERSION 1.0 · EDITORIAL</div>
@@ -99,39 +161,39 @@
     </div>
 
     <div class="index reveal">
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-1-title">
         <span class="n">N° 01</span>
-        <span class="name">Trainer</span>
+        <h3 class="name" id="expert-1-title">Trainer</h3>
         <span class="body"><span class="credential">CPT · CERTIFIED</span><br/>Movement patterns, periodization, progression. Plans you can actually execute in the gym you already go to.</span>
         <span class="go">Programming</span>
       </article>
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-2-title">
         <span class="n">N° 02</span>
-        <span class="name">Nutritionist</span>
+        <h3 class="name" id="expert-2-title">Nutritionist</h3>
         <span class="body"><span class="credential">RDN · REGISTERED DIETITIAN</span><br/>Macros, micros, hydration. Rules the way a clinic would write them, not the way an influencer would tweet them.</span>
         <span class="go">Nutrition</span>
       </article>
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-3-title">
         <span class="n">N° 03</span>
-        <span class="name">Sports Medicine</span>
+        <h3 class="name" id="expert-3-title">Sports Medicine</h3>
         <span class="body"><span class="credential">SMS · SPECIALIST</span><br/>Injury screening, contraindications, return-to-train protocols. Knows what to avoid, and why.</span>
         <span class="go">Safety</span>
       </article>
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-4-title">
         <span class="n">N° 04</span>
-        <span class="name">Health Coach</span>
+        <h3 class="name" id="expert-4-title">Health Coach</h3>
         <span class="body"><span class="credential">CHC · CLINICAL</span><br/>Condition-specific modifications across 13 chronic conditions. Not generic. Not guessed.</span>
         <span class="go">Conditions</span>
       </article>
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-5-title">
         <span class="n">N° 05</span>
-        <span class="name"><em>Behavioral Psych</em></span>
+        <h3 class="name" id="expert-5-title"><em>Behavioral Psych</em></h3>
         <span class="body"><span class="credential">BEHAVIOR · ADHERENCE</span><br/>Habit design, sleep architecture, recovery protocols. Why most plans fail — and why this one won't.</span>
         <span class="go">Adherence</span>
       </article>
-      <article class="idx-row">
+      <article class="idx-row" aria-labelledby="expert-6-title">
         <span class="n">N° 06</span>
-        <span class="name">Sport Conditioning</span>
+        <h3 class="name" id="expert-6-title">Sport Conditioning</h3>
         <span class="body"><span class="credential">SSC · SPECIALIST</span><br/>Cricket, football, swimming, running, martial arts. Sport-specific conditioning when you want it.</span>
         <span class="go">Sport</span>
       </article>
@@ -152,11 +214,11 @@
 
     <div class="manu-wrap reveal">
       <nav class="manu-rail" aria-label="Step navigator" id="rail">
-        <button data-step="1" class="on"><span class="d"></span>01 · PROFILE</button>
-        <button data-step="2"><span class="d"></span>02 · SCREENING</button>
-        <button data-step="3"><span class="d"></span>03 · PANTRY</button>
-        <button data-step="4"><span class="d"></span>04 · CALCULATIONS</button>
-        <button data-step="5"><span class="d"></span>05 · PLAN</button>
+        <button data-step="1" class="on" aria-pressed="true"><span class="d"></span>01 · PROFILE</button>
+        <button data-step="2" aria-pressed="false"><span class="d"></span>02 · SCREENING</button>
+        <button data-step="3" aria-pressed="false"><span class="d"></span>03 · PANTRY</button>
+        <button data-step="4" aria-pressed="false"><span class="d"></span>04 · CALCULATIONS</button>
+        <button data-step="5" aria-pressed="false"><span class="d"></span>05 · PLAN</button>
       </nav>
 
       <div class="manu-stream">
@@ -181,7 +243,7 @@
           </div>
         </article>
 
-        <article class="manu-step" id="step-2" data-step="2">
+        <article class="manu-step" id="step-2" data-step="2" aria-hidden="true">
           <div class="left">
             <div class="step-n">0<em>2</em></div>
             <h3>Medical screening.</h3>
@@ -200,7 +262,7 @@
           </div>
         </article>
 
-        <article class="manu-step" id="step-3" data-step="3">
+        <article class="manu-step" id="step-3" data-step="3" aria-hidden="true">
           <div class="left">
             <div class="step-n">0<em>3</em></div>
             <h3>Goals &amp; <em>pantry.</em></h3>
@@ -215,7 +277,7 @@
           </div>
         </article>
 
-        <article class="manu-step" id="step-4" data-step="4">
+        <article class="manu-step" id="step-4" data-step="4" aria-hidden="true">
           <div class="left">
             <div class="step-n">0<em>4</em></div>
             <h3>Calculations.</h3>
@@ -234,7 +296,7 @@
           </div>
         </article>
 
-        <article class="manu-step" id="step-5" data-step="5">
+        <article class="manu-step" id="step-5" data-step="5" aria-hidden="true">
           <div class="left">
             <div class="step-n">0<em>5</em></div>
             <h3>Plan delivery.</h3>
@@ -285,7 +347,7 @@
 
       <article class="story-cycle">
         <span class="kicker">— Feature 02 · Cycle-aware</span>
-        <h4>Periodized for <em>female</em> physiology.</h4>
+        <h3>Periodized for <em>female</em> physiology.</h3>
         <p>Trains and feeds you by cycle phase. Pregnancy and postpartum protocols included — pelvic floor priority, OB-GYN referrals when flagged.</p>
         <svg class="cycle-svg" viewBox="0 0 200 200" aria-hidden="true">
           <circle cx="100" cy="100" r="78" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
@@ -299,7 +361,7 @@
 
       <article class="story-cond">
         <span class="kicker" style="color:rgba(244,239,228,.6)">— Feature 03 · Conditions</span>
-        <h4><span class="big">13</span> medical conditions handled — <em style="color:var(--lime);font-style:italic">automatically.</em></h4>
+        <h3><span class="big">13</span> medical conditions handled — <em style="color:var(--lime);font-style:italic">automatically.</em></h3>
         <div class="cond-grid">
           <span>Diabetes T1</span><span>Diabetes T2</span><span>Hypertension</span><span>Heart disease</span><span>Kidney disease</span><span>Osteoporosis</span><span>PCOS</span><span>Pregnancy</span><span>Postpartum</span><span>Post-surgery</span><span>Back / disc</span><span>Asthma</span><span>Thyroid</span>
         </div>
@@ -307,7 +369,7 @@
 
       <article class="story-hr">
         <span class="kicker" style="color:rgba(244,239,228,.55)">— Feature 04 · HR zones</span>
-        <h4>Trained in the <em>right zone.</em></h4>
+        <h3>Trained in the <em>right zone.</em></h3>
         <p>Karvonen-computed heart rate zones, shown on every cardio block. No "just go at 70%" guessing.</p>
         <div class="zones">
           <div class="z z1"><span class="lab">Z1 · Recovery</span><div class="tr"><i class="fi"></i></div><span class="val">&lt; 114 bpm</span></div>
@@ -320,7 +382,7 @@
 
       <article class="story-sport">
         <span class="kicker">— Feature 05 · Sport-specific</span>
-        <h4>Conditioning, by your <em>sport.</em></h4>
+        <h3>Conditioning, by your <em>sport.</em></h3>
         <p>Cricket, football, swimming, running, martial arts — programs adjust for sport-specific demands.</p>
         <div class="sport-orbit" aria-hidden="true">
           <span class="tag">Cricket</span>
@@ -335,7 +397,7 @@
 </section>
 
 <!-- VOLUME CHART -->
-<section class="sec" aria-label="4-week volume curve">
+<section class="sec" id="volume" aria-label="4-week volume curve">
   <div class="container">
     <div class="vol-wrap reveal">
       <div class="vol-side">
@@ -346,7 +408,7 @@
           <span>W1 · FOUNDATION</span><span>W2 · BUILD</span><span>W3 · PUSH</span><span>W4 · DELOAD</span>
         </div>
       </div>
-      <div class="vol-chart" id="volChart" aria-hidden="true">
+      <div class="vol-chart" id="volChart" role="img" aria-label="4-week training volume curve: Week 1 Foundation 40%, Week 2 Build 65%, Week 3 Push 100%, Week 4 Deload 50%">
         <svg viewBox="0 0 800 360" preserveAspectRatio="none">
           <defs>
             <linearGradient id="volGrad" x1="0" x2="0" y1="0" y2="1">
@@ -397,7 +459,7 @@
 </section>
 
 <!-- PHONE CHAT -->
-<section class="sec" aria-label="Sample conversation">
+<section class="sec" id="conversation" aria-label="Sample conversation">
   <div class="container">
     <div class="phone-wrap reveal">
       <div class="phone-copy">
@@ -506,7 +568,7 @@
 </section>
 
 <!-- PRICE CHART -->
-<section class="sec" aria-label="Price comparison">
+<section class="sec" id="pricing-compare" aria-label="Price comparison">
   <div class="container">
     <div class="pchart-wrap reveal">
       <div class="pchart-side">
@@ -600,7 +662,7 @@
         <span class="kicker" style="color:rgba(244,239,228,.55)">—— One last thing</span>
         <h2 style="margin-top:18px">Coach who shows up. Pay <em>once.</em> Lift <em>forever.</em></h2>
         <div class="cta-row">
-          <a href="#" class="btn btn-secondary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
+          <a href="pricing.html" class="btn btn-secondary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
           <a href="index.html" class="btn btn-ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)">Read the manifesto <span class="arc" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -616,7 +678,7 @@
     <div class="foot-word">Coach AI<em>.</em></div>
     <div class="foot-grid">
       <div class="foot-col">
-        <h5>Product</h5>
+        <h3 class="foot-heading">Product</h3>
         <ul>
           <li><a href="#features">Features</a></li>
           <li><a href="#how">How it works</a></li>
@@ -625,34 +687,35 @@
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Coach AI</h5>
+        <h3 class="foot-heading">Coach AI</h3>
         <ul>
           <li><a href="#experts">The six experts</a></li>
-          <li><a href="#">Calculations</a></li>
-          <li><a href="#">Conditions handled</a></li>
-          <li><a href="#">Refusals policy</a></li>
+          <li><a href="#calc">Calculations</a></li>
+          <li><a href="#features">Conditions handled</a></li>
+          <li><a href="#safety">Refusals policy</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Company</h5>
+        <h3 class="foot-heading">Company</h3>
         <ul>
           <li><a href="index.html">Manifesto</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="mailto:hello@lyftora.in">Contact</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Get the app</h5>
+        <h3 class="foot-heading">Get the app</h3>
         <ul>
-          <li><a href="#">iOS App Store</a></li>
-          <li><a href="#">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/lyftora" rel="noopener" target="_blank">iOS App Store</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=in.lyftora" rel="noopener" target="_blank">Google Play</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bot">
       <span>© 2026 LYFTORA · BUILT FOR THE NEXT REP</span>
       <span>COACH AI · v1.0 · 2026.04</span>
+      <a href="/sitemap.xml" style="color:var(--muted);font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-decoration:none">Sitemap</a>
     </div>
   </div>
 </footer>

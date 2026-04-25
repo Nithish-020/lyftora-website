@@ -93,6 +93,7 @@
     drawer.className = 'site-nav-drawer';
     drawer.id = 'site-nav-drawer';
     drawer.setAttribute('aria-label', 'Mobile navigation');
+    drawer.setAttribute('aria-hidden', 'true');
     drawer.innerHTML =
       drawerLinks +
       `<a href="${CTA_HREF}" class="site-nav-drawer-cta">${CTA_LABEL} &#8599;</a>`;
@@ -108,12 +109,21 @@
       nav.classList.add('is-open');
       drawer.classList.add('is-open');
       burger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      drawer.setAttribute('aria-modal', 'true');
+      drawer.setAttribute('role', 'dialog');
+      var firstLink = drawer.querySelector('a');
+      if (firstLink) firstLink.focus();
     }
 
     function closeDrawer() {
       nav.classList.remove('is-open');
       drawer.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.removeAttribute('aria-modal');
+      drawer.removeAttribute('role');
+      burger.focus();
     }
 
     burger.addEventListener('click', function (e) {
