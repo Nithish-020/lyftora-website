@@ -67,7 +67,7 @@
   font-family: var(--sans);
   font-size: 13.5px;
   font-weight: 500;
-  color: color-mix(in srgb, var(--ink) 58%, transparent);
+  color: #595853; /* meets WCAG 1.4.3 AA 4.5:1 on --cream */
   text-decoration: none;
   letter-spacing: 0.01em;
   transition: color 0.2s;
@@ -197,7 +197,7 @@
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 500;
-  color: color-mix(in srgb, var(--ink) 68%, transparent);
+  color: #4A4944; /* meets WCAG 1.4.3 AA 4.5:1 on --cream */
   text-decoration: none;
   padding: 13px 16px;
   border-radius: 14px;
@@ -232,4 +232,12 @@
 
 .site-nav-drawer-cta:hover {
   background: var(--coral);
+}
+
+
+/* ── Mobile CTA hide + overflow fix (Issue 1) ── */
+@media (max-width: 480px) {
+  .site-nav { padding: 8px 8px 8px 16px; gap: 8px; }
+  .site-nav-cta { display: none; }
+  .site-nav-brand { font-size: 20px; }
 }
