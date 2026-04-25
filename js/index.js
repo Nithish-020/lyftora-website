@@ -2,28 +2,10 @@
    Lyftora — Landing Page Scripts
    ============================================ */
 
-// ---------- Custom cursor ----------
-(() => {
-  const dot = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  if (!dot || !ring) return;
-  let x = window.innerWidth / 2, y = window.innerHeight / 2;
-  let rx = x, ry = y;
-  document.addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; });
-  function tick() {
-    rx += (x - rx) * 0.18;
-    ry += (y - ry) * 0.18;
-    dot.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(tick);
-  }
-  tick();
-  const hoverables = document.querySelectorAll('a, button, .food-card-2, .b-card, .phone-3d');
-  hoverables.forEach(el => {
-    el.addEventListener('mouseenter', () => { dot.classList.add('is-hover'); ring.classList.add('is-hover'); });
-    el.addEventListener('mouseleave', () => { dot.classList.remove('is-hover'); ring.classList.remove('is-hover'); });
-  });
-})();
+// ---------- Custom cursor — extra hover targets ----------
+if (window._cursorHover) {
+  window._cursorHover('.food-card-2, .b-card, .phone-3d');
+}
 
 // ---------- Magnetic buttons ----------
 document.querySelectorAll('[data-magnet]').forEach(el => {

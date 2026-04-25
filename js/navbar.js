@@ -102,6 +102,44 @@
     document.body.insertAdjacentElement('afterbegin', drawer);
     document.body.insertAdjacentElement('afterbegin', nav);
 
+    /* ── Custom cursor ── */
+    var dot = document.createElement('div');
+    dot.id = 'cursor';
+    dot.className = 'site-cursor';
+    var ring = document.createElement('div');
+    ring.id = 'cursor-ring';
+    ring.className = 'site-cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    var cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+    var rx = cx, ry = cy;
+    document.addEventListener('mousemove', function (e) { cx = e.clientX; cy = e.clientY; });
+    (function cursorTick() {
+      rx += (cx - rx) * 0.18;
+      ry += (cy - ry) * 0.18;
+      dot.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0) translate(-50%,-50%)';
+      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0) translate(-50%,-50%)';
+      requestAnimationFrame(cursorTick);
+    })();
+
+    function addCursorHover(selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+          dot.classList.add('is-hover');
+          ring.classList.add('is-hover');
+        });
+        el.addEventListener('mouseleave', function () {
+          dot.classList.remove('is-hover');
+          ring.classList.remove('is-hover');
+        });
+      });
+    }
+    addCursorHover('a, button');
+
+    /* Expose so page scripts can register extra hover targets */
+    window._cursorHover = addCursorHover;
+
     /* ── Burger toggle ── */
     const burger = nav.querySelector('.site-nav-burger');
 
