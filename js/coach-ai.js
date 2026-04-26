@@ -56,6 +56,48 @@
       card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
     }
   }));
+
+  /* ── Mobile prev/next nav ── */
+  const cards = stream.querySelectorAll('.manu-step');
+  const navPrev = document.querySelector('.manu-nav-btn[data-dir="prev"]');
+  const navNext = document.querySelector('.manu-nav-btn[data-dir="next"]');
+  const navPos  = document.querySelector('.manu-nav-pos');
+
+  if (cards.length && navPrev && navNext && navPos) {
+    function currentIndex() {
+      const sLeft = stream.scrollLeft;
+      let best = 0, bestDist = Infinity;
+      cards.forEach((c, i) => {
+        const dist = Math.abs(c.offsetLeft - sLeft);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      });
+      return best;
+    }
+
+    function updateNavState() {
+      const i = currentIndex();
+      navPos.textContent = (i + 1) + ' / ' + cards.length;
+      navPrev.setAttribute('aria-disabled', i === 0 ? 'true' : 'false');
+      navNext.setAttribute('aria-disabled', i === cards.length - 1 ? 'true' : 'false');
+    }
+
+    function goto(i) {
+      i = Math.max(0, Math.min(cards.length - 1, i));
+      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    }
+
+    navPrev.addEventListener('click', () => goto(currentIndex() - 1));
+    navNext.addEventListener('click', () => goto(currentIndex() + 1));
+
+    let scrollT;
+    stream.addEventListener('scroll', () => {
+      clearTimeout(scrollT);
+      scrollT = setTimeout(updateNavState, 80);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateNavState);
+    updateNavState();
+  }
 })();
 /* ── Pantry typer (storyboard feature block) ── */
 (() => {

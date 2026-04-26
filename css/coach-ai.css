@@ -737,8 +737,57 @@ svg { display: block; }
 .cal .d.w4 { background: var(--ink); color: var(--cream); }
 .cal .d.rest { background: transparent; color: var(--muted); opacity: .4; }
 
+/* ── Manuscript prev/next nav (mobile-only) ── */
+.manu-nav { display: none; }
+
 /* ── Manuscript: tighten for small screens (≤ 540px) ── */
 @media (max-width: 540px) {
+  /* Hide rail entirely on mobile — replaced by prev/next */
+  .manu-rail { display: none; }
+
+  .manu-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .manu-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    background: var(--cream);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s, opacity .15s;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+  }
+  .manu-nav-btn:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .manu-nav-btn[aria-disabled="true"] { opacity: .3; pointer-events: none; }
+  .manu-nav-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .manu-nav-pos {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    min-width: 5ch;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+
   /* Card itself */
   .manu-step {
     padding: 22px 18px;
