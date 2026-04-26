@@ -3,50 +3,76 @@
   max-width: 480px;
   margin-inline: auto;
 }
+/* Mobile-first: input and button are independent pills, stacked */
 .waitlist-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 6px;
-  border: 1px solid rgba(14, 14, 18, .18);
-  border-radius: 999px;
-  background: #fff;
-}
-@media (min-width: 540px) {
-  .waitlist-form {
-    flex-direction: row;
-    align-items: center;
-  }
+  gap: 10px;
 }
 .waitlist-form input {
   flex: 1;
-  border: 0;
-  background: transparent;
-  padding: 12px 18px;
+  border: 1px solid rgba(14, 14, 18, .18);
+  border-radius: 999px;
+  background: #fff;
+  padding: 14px 22px;
   font: inherit;
   font-size: 15px;
   color: var(--ink);
   outline: none;
   min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .waitlist-form input::placeholder {
   color: var(--muted);
+}
+.waitlist-form input:focus {
+  border-color: var(--ink);
 }
 .waitlist-form button {
   border: 0;
   border-radius: 999px;
   background: var(--ink);
   color: var(--cream);
-  padding: 12px 22px;
+  padding: 14px 22px;
   font: inherit;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   transition: background .15s;
+  width: 100%;
 }
 .waitlist-form button:hover {
   background: var(--coral);
+}
+
+/* ≥540px: merge input + button into one combined pill */
+@media (min-width: 540px) {
+  .waitlist-form {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    border: 1px solid rgba(14, 14, 18, .18);
+    border-radius: 999px;
+    background: #fff;
+  }
+  .waitlist-form input {
+    border: 0;
+    background: transparent;
+    padding: 12px 18px;
+    width: auto;
+  }
+  .waitlist-form input:focus {
+    border-color: transparent;
+  }
+  .waitlist-form button {
+    width: auto;
+    padding: 12px 22px;
+  }
 }
 .waitlist-status {
   font-family: var(--mono);
@@ -69,6 +95,9 @@
 
 /* ── Coach-AI pre-launch banner ── */
 .prelaunch-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
   background: var(--ink);
   color: var(--cream);
   padding: 14px clamp(16px, 4vw, 40px);
