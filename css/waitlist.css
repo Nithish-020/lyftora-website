@@ -2,6 +2,13 @@
 .waitlist {
   max-width: 480px;
   margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+.waitlist-form input,
+.waitlist-form button {
+  pointer-events: auto;
+  position: relative;
 }
 /* Mobile-first: input and button are independent pills, stacked */
 .waitlist-form {
@@ -31,6 +38,9 @@
 .waitlist-form input:focus {
   border-color: var(--ink);
 }
+.waitlist-form input.is-error {
+  border-color: var(--coral);
+}
 .waitlist-form button {
   border: 0;
   border-radius: 999px;
@@ -59,6 +69,9 @@
     border: 1px solid rgba(14, 14, 18, .18);
     border-radius: 999px;
     background: #fff;
+  }
+  .waitlist-form.has-error {
+    border-color: var(--coral);
   }
   .waitlist-form input {
     border: 0;
