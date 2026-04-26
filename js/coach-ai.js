@@ -255,13 +255,23 @@
     const content = faq.querySelector('.a');
     if (!content) return;
 
-    faq.setAttribute('open', '');
-    const h = content.scrollHeight;
+    if (reduced) { faq.setAttribute('open', ''); return; }
 
+    // Pin to zero before native expand to avoid the flicker race
+    content.style.overflow = 'hidden';
+    content.style.height = '0px';
+    content.style.opacity = '0';
+    faq.setAttribute('open', '');
+
+    // Force reflow so the next animation has a clean starting state
+    void content.offsetHeight;
+
+    const target = content.scrollHeight;
     content.animate(
-      [{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
+      [{ height: '0px', opacity: 0 }, { height: target + 'px', opacity: 1 }],
       { duration: DURATION_OPEN, easing: EASING, fill: 'forwards' }
     ).finished.then(() => {
+      content.style.overflow = '';
       content.style.height = '';
       content.style.opacity = '';
     });
@@ -271,13 +281,19 @@
     const content = faq.querySelector('.a');
     if (!content) return;
 
+    if (reduced) { faq.removeAttribute('open'); return; }
+
     const h = content.getBoundingClientRect().height;
+    content.style.overflow = 'hidden';
+    content.style.height = h + 'px';
+    void content.offsetHeight;
 
     content.animate(
       [{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
       { duration: DURATION_CLOSE, easing: EASING, fill: 'forwards' }
     ).finished.then(() => {
       faq.removeAttribute('open');
+      content.style.overflow = '';
       content.style.height = '';
       content.style.opacity = '';
     });
