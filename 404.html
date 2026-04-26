@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Page: 404 — Not Found
+  Design system: Lyftora DS v1.0 (cream / ink / lime / coral · Instrument Serif + Space Grotesk + Geist Mono)
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — This rep doesn't exist · Lyftora</title>
+  <meta name="description" content="The page you're looking for couldn't be found. Let's get you back to training." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/404.css" />
+</head>
+
+<body>
+
+  <nav></nav>
+
+  <main aria-labelledby="heading">
+    <div class="container">
+      <div class="stage">
+
+        <section class="copy" aria-label="Page not found">
+          <div class="meta"><b>ERROR · 404</b> · ROUTE NOT FOUND<br />STATUS · This rep doesn't exist (yet)</div>
+
+          <div class="numerals" aria-hidden="true">
+            <span class="n l">4</span>
+            <span class="n m">
+              <span class="orb">
+                <span class="glow"></span>
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+                    <line x1="22" y1="50" x2="78" y2="50" />
+                    <line x1="14" y1="38" x2="14" y2="62" />
+                    <line x1="86" y1="38" x2="86" y2="62" />
+                    <line x1="22" y1="34" x2="22" y2="66" stroke-width="8" />
+                    <line x1="78" y1="34" x2="78" y2="66" stroke-width="8" />
+                  </g>
+                </svg>
+                <span class="ring"></span>
+              </span>
+            </span>
+            <span class="n r">4</span>
+          </div>
+
+          <h1 id="heading">This page <em>missed a rep.</em></h1>
+          <p>The URL you followed isn't on the program. Maybe the link is old, maybe the page was retired, maybe a typo crept in. <b>Coach AI's still here.</b> Let's get you back to something useful.</p>
+
+          <div class="cta-row">
+            <a href="/" class="btn btn-primary">Back to home <span class="arc" aria-hidden="true">→</span></a>
+            <a href="javascript:history.back()" class="btn btn-ghost"><span class="arc back" aria-hidden="true">→</span> Previous page</a>
+          </div>
+
+          <nav class="suggest" aria-label="Try these instead">
+            <span class="kicker lab">Try these instead</span>
+            <ul>
+              <li><a href="/#experts"><span class="n">N° 01</span><span class="nm">The six <em>experts</em></span><span class="go">Coach AI</span></a></li>
+              <li><a href="/#how"><span class="n">N° 02</span><span class="nm">How a plan <em>gets built</em></span><span class="go">Process</span></a></li>
+              <li><a href="/#calc"><span class="n">N° 03</span><span class="nm">Live <em>calculator</em></span><span class="go">Try it</span></a></li>
+              <li><a href="/#faq"><span class="n">N° 04</span><span class="nm">Questions over <em>coffee</em></span><span class="go">FAQ</span></a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <aside class="aside" aria-label="System log">
+          <span class="stamp">404 · NOT FOUND</span>
+          <div class="log" role="log" aria-live="polite">
+            <div class="head"><span>COACH AI · ROUTER</span><span class="lit">LIVE</span></div>
+            <p><span class="t" id="t1">00:00</span><span class="lvl info">GET</span><span class="msg" id="m1"></span></p>
+            <p><span class="t" id="t2">00:00</span><span class="lvl warn">404</span><span class="msg" id="m2"></span></p>
+            <p><span class="t" id="t3">00:00</span><span class="lvl err">ROUTE</span><span class="msg" id="m3"></span></p>
+            <p><span class="t" id="t4">00:00</span><span class="lvl info">FALLBACK</span><span class="msg" id="m4"></span></p>
+            <p><span class="t" id="t5">00:00</span><span class="lvl ok">READY</span><span class="msg typing" id="m5"></span></p>
+          </div>
+          <div class="score" aria-hidden="true">
+            <div><span>Status code</span><b>404</b></div>
+            <div><span>Response time</span><b>0.04<em>s</em></b></div>
+            <div><span>Reps lost</span><b>0</b></div>
+            <div><span>Plan still on track</span><b><em>yes</em></b></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/404.js" defer></script>
+</body>
+
+</html>

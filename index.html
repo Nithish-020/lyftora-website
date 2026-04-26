@@ -3,546 +3,749 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lyftora — Train smarter. Pay once. Lift forever.</title>
-<meta name="description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<title>Lyftora — Coming Soon</title>
+<meta name="description" content="The AI personal trainer that doesn't charge rent. Launching soon — get early updates." />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lyftora.in/" />
-<meta property="og:title" content="Lyftora — Train smarter. Pay once. Lift forever." />
-<meta property="og:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
+<meta property="og:title" content="Lyftora — Coming Soon" />
+<meta property="og:description" content="The AI personal trainer that doesn't charge rent. Launching soon." />
 <meta property="og:image" content="https://lyftora.in/assets/images/lyftora-preview-thumbnail.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Lyftora logo with tagline: Train smarter. Pay once. Lift forever." />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Lyftora — Train smarter. Pay once. Lift forever." />
-<meta name="twitter:description" content="The AI personal trainer that doesn't charge rent. One payment. A lifetime of training." />
-<meta name="twitter:image" content="https://lyftora.in/og-image.png" />
+<meta name="twitter:title" content="Lyftora — Coming Soon" />
+<meta name="twitter:description" content="The AI personal trainer that doesn't charge rent. Launching soon." />
+<meta name="twitter:image" content="https://lyftora.in/assets/images/lyftora-preview-thumbnail.png" />
 
 <link rel="canonical" href="https://lyftora.in/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "Lyftora",
-      "url": "https://lyftora.in",
-      "logo": "https://lyftora.in/assets/images/lyftora-preview-thumbnail.png",
-      "description": "AI personal trainer. Train smarter. Pay once. Lift forever.",
-      "sameAs": []
-    },
-    {
-      "@type": "WebSite",
-      "name": "Lyftora",
-      "url": "https://lyftora.in",
-      "publisher": { "@type": "Organization", "name": "Lyftora" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Lyftora",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Android, iOS",
-      "description": "The AI personal trainer that doesn\u0027t charge rent. One payment. A lifetime of training.",
-      "url": "https://lyftora.in",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR",
-        "description": "Free tier available. Paid plans from \u20b9299/month."
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://lyftora.in/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "\u20b9499 for everything \u2014 really?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. One payment unlocks the entire app, forever, across every device you use. No locked tiers. No premium workouts. No upsell pop-up mid-set."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What\u0027s the catch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "There isn\u0027t one. Optional expansion packs \u2014 sport-specific programs, regional cuisine libraries \u2014 exist as tiny one-time add-ons if you want them. The core app is yours outright."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the AI coach good enough to replace a human trainer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For most people training for strength, conditioning, or weight management \u2014 yes. For elite athletes, Lyftora works alongside your human coach as a 24/7 memory and logger."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does it work on older phones?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. 15 MB download, runs smoothly on 2 GB RAM, under 2 s cold start. We benchmarked on budget devices first \u2014 flagships came second."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "When does iOS launch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "End of June 2026, at the same price. Your purchase follows you \u2014 buy on Android, log in on iOS, no second charge."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What if I don\u0027t love it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Full refund inside 30 days, no forms, no guilt. We\u0027d rather earn a fan for a decade than trap a user for a month."
-          }
-        }
-      ]
-    }
-  ]
+<style>
+/* ── Tokens (mirrored from coach-ai.css) ── */
+:root {
+  --cream: #F4EFE4;
+  --cream-2: #EFE8D8;
+  --ink: #0E0E12;
+  --muted: #6B6A63;
+  --lime: #D6FF4D;
+  --coral: #FF5A3C;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Space Grotesk", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --container: 1320px;
+  --pad: clamp(16px, 4vw, 40px);
+  --line: rgba(14,14,18,.1);
+  --line-strong: rgba(14,14,18,.18);
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-pill: 999px;
 }
-</script>
+
+/* ── Layout ── */
+.cs-wrap { overflow-x: clip; }
+.cs-container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+/* ── HERO ── */
+.cs-hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 130px var(--pad) 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, color-mix(in srgb, var(--lime) 22%, transparent), transparent),
+    radial-gradient(ellipse 40% 30% at 80% 70%, color-mix(in srgb, var(--coral) 10%, transparent), transparent);
+  z-index: 0;
+}
+
+.cs-hero-inner { position: relative; z-index: 1; }
+
+.cs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  padding: 7px 18px;
+  margin-bottom: 44px;
+  background: color-mix(in srgb, var(--cream) 80%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.cs-badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--coral);
+  animation: blink-dot 2.2s ease-in-out infinite;
+}
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .35; transform: scale(.75); }
+}
+
+.cs-h1 {
+  font-family: var(--serif);
+  font-size: clamp(56px, 11vw, 150px);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.03em;
+  max-width: 14ch;
+  margin: 0 auto 32px;
+}
+.cs-h1 em { font-style: italic; color: var(--coral); }
+
+.cs-hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 50ch;
+  margin: 0 auto 56px;
+}
+
+.cs-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 600;
+  padding: 18px 40px;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 6px 28px color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.cs-btn-primary:hover {
+  background: var(--coral);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--coral) 32%, transparent);
+}
+.cs-btn-primary svg {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .2s;
+}
+.cs-btn-primary:hover svg { transform: translate(3px, -3px); }
+
+.cs-email-note {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+/* Scroll cue */
+.cs-scroll-cue {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: float-cue 2.4s ease-in-out infinite;
+}
+@keyframes float-cue {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+.cs-scroll-cue svg {
+  width: 20px; height: 20px;
+  stroke: var(--muted); fill: none;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── TICKER ── */
+.cs-ticker {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-block: 1px solid var(--ink);
+}
+.cs-ticker-track {
+  display: inline-flex;
+  gap: 0;
+  animation: ticker-scroll 30s linear infinite;
+}
+.cs-ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.cs-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 32px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.cs-ticker-item::after {
+  content: "·";
+  color: var(--lime);
+  font-size: 20px;
+}
+
+/* ── WHAT'S INSIDE ── */
+.cs-inside {
+  padding: 120px 0 100px;
+}
+.cs-sec-head {
+  margin-bottom: 64px;
+}
+.cs-kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 16px;
+}
+.cs-sec-title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 6vw, 88px);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.03em;
+}
+.cs-sec-title em { font-style: italic; color: var(--coral); }
+
+.cs-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 600px) { .cs-cards { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .cs-cards { grid-template-columns: 1fr 1fr 1fr; } }
+
+.cs-card {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  padding: 32px 28px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
+}
+.cs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.cs-card-accent {
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 120px;
+  border-radius: 0 var(--r-lg) 0 120px;
+  opacity: .12;
+}
+.cs-card-n {
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: .85;
+  letter-spacing: -.04em;
+  opacity: .08;
+  margin-bottom: 20px;
+}
+.cs-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-bottom: 12px;
+}
+.cs-card h3 em { font-style: italic; color: var(--coral); }
+.cs-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.cs-card-tag {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--lime);
+  border-radius: var(--r-pill);
+  padding: 4px 12px;
+}
+
+/* ── WHY DIFFERENT ── */
+.cs-why {
+  padding: 100px 0;
+  background: var(--ink);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.cs-why::before {
+  content: "";
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--lime) 12%, transparent), transparent 70%);
+  top: -200px; right: -100px;
+  pointer-events: none;
+}
+.cs-why .cs-kicker { color: color-mix(in srgb, var(--cream) 50%, transparent); }
+.cs-why .cs-sec-title { color: var(--cream); }
+
+.cs-rows {
+  margin-top: 64px;
+  border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+}
+.cs-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 28px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+  transition: padding .3s;
+}
+@media (min-width: 760px) {
+  .cs-row {
+    grid-template-columns: 280px 1fr auto;
+    gap: 40px;
+    align-items: center;
+    padding: 32px 0;
+  }
+}
+.cs-row-label {
+  font-family: var(--serif);
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--cream);
+}
+.cs-row-label em { font-style: italic; color: var(--lime); }
+.cs-row-body {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--cream) 65%, transparent);
+  line-height: 1.55;
+  max-width: 52ch;
+}
+.cs-row-tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--lime);
+  opacity: .7;
+  white-space: nowrap;
+}
+
+/* ── WHAT WE'RE BUILDING ── */
+.cs-building {
+  padding: 120px 0 100px;
+}
+.cs-progress-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 56px;
+}
+@media (min-width: 760px) { .cs-progress-grid { grid-template-columns: 1fr 1fr; } }
+
+.cs-progress-item {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--cream);
+}
+.cs-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cs-progress-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.cs-progress-pct {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.cs-progress-bar {
+  height: 6px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.cs-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--ink);
+  transform-origin: left;
+  animation: fill-bar .9s cubic-bezier(.2,.8,.3,1) both;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes fill-bar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.cs-progress-label {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── FINAL CTA ── */
+.cs-final {
+  padding: 120px var(--pad);
+  text-align: center;
+  background: var(--cream-2);
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.cs-final::before {
+  content: "Lyftora";
+  position: absolute;
+  bottom: -.15em; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: clamp(100px, 22vw, 280px);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  color: var(--ink);
+  opacity: .04;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.cs-final-h2 {
+  font-family: var(--serif);
+  font-size: clamp(44px, 8vw, 110px);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.03em;
+  margin-bottom: 28px;
+}
+.cs-final-h2 em { font-style: italic; color: var(--coral); }
+.cs-final-sub {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 46ch;
+  margin: 0 auto 52px;
+}
+.cs-final-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+.cs-final-note {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+</style>
 </head>
 <body>
+<div class="cs-wrap">
 
-
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-blobs">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
+<!-- ── HERO ── -->
+<section class="cs-hero">
+  <div class="cs-hero-glow" aria-hidden="true"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-badge">
+      <span class="cs-badge-dot" aria-hidden="true"></span>
+      We're building something
     </div>
-    <div class="container">
-      <div class="hero-head">
-        <div class="eyebrow-pill">
-          <span class="badge">NEW</span>
-          AI personal trainer &middot; Shipping May 2026
-        </div>
-        <h1 class="hero-headline">
-          <span class="word">Train</span>
-          <span class="word"><em>smarter.</em></span><br/>
-          <span class="word">Pay</span>
-          <span class="word">once.</span><br/>
-          <span class="word">Lift</span>
-          <span class="word">forever.</span>
-        </h1>
-        <p class="hero-sub">
-          An AI coach that knows your schedule, your goals, and every rep you've ever lifted.
-          One flat price. No monthly tax on your motivation. Just training that compounds for life.
-        </p>
-        <div class="hero-ctas">
-          <a href="#pricing" class="btn btn-primary" data-magnet>
-            Get Lyftora
-            <span class="arrow">&rarr;</span>
-          </a>
-          <a href="#manifesto" class="btn btn-ghost" data-magnet>Read the manifesto</a>
-        </div>
-      </div>
 
-      <div class="hero-collage">
-        <div class="card-stat reveal">
-          <span class="sticker">Live</span>
-          <div>
-            <div class="big" data-counter="12847">0</div>
-            <div class="label">Workouts logged this week</div>
-          </div>
-          <div class="label" style="opacity:.5">Across 38 countries.</div>
-        </div>
+    <h1 class="cs-h1">
+      Your AI coach is <em>almost</em> ready.
+    </h1>
 
-        <div class="card-phone reveal">
-          <div class="phone-3d" id="phone3d">
-            <div class="phone-screen-2">
-              <div class="ph-top"><span>9:41</span><span>&#9680; &#9679; &#9679;&#9679;&#9679;</span></div>
-              <div>
-                <div style="font-size:10px;opacity:.5;letter-spacing:.1em;text-transform:uppercase">Today &middot; Week 6</div>
-                <div class="ph-title">Push Day</div>
-                <span class="ph-chip">+ PR 92.5kg</span>
-              </div>
-              <div class="ph-rep">
-                <div class="ph-rep-row"><span>Bench Press</span><strong>92.5 &times; 6</strong></div>
-                <div class="ph-dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
-              </div>
-              <div class="ph-ring-wrap">
-                <div class="ph-ring"><span>1:23</span></div>
-                <div>
-                  <small>Rest</small>
-                  <div><strong>Next set soon</strong></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <p class="cs-hero-sub">
+      Lyftora is an AI personal trainer that screens you like a clinic, builds plans from your real pantry, and never charges a monthly fee.
+      We're not live yet — but we'd love to keep you in the loop.
+    </p>
 
-        <div class="card-quote reveal">
-          <div class="q-mark">&ldquo;</div>
-          <p>Finally, an app that treats me like an athlete &mdash; not a subscription.</p>
-          <div class="who">
-            <i>&mdash;</i> Priya M., marathon runner
-          </div>
-        </div>
-
-        <div class="card-coin reveal" style="grid-column: span 2;">
-          <span class="coin-badge">TAP THE COIN</span>
-          <h3 class="coin-title">Every tap is a rupee you'll never pay again.</h3>
-          <div class="coin-counter"><span class="rupee">&#8377;</span><span id="coin-count">0</span></div>
-          <p class="coin-small">A subscription app charges this every month. Lyftora charges it exactly once.</p>
-          <button class="coin-btn" id="coin-btn" data-magnet>+1 &#8377; <span style="font-size:11px;font-family:var(--mono);opacity:.7">SPAM IT</span></button>
-        </div>
-
-        <div class="card-stat reveal" style="background:var(--violet);">
-          <span class="sticker" style="background:var(--lime);">4.9 &#9733;</span>
-          <div class="big" style="font-size:clamp(40px,6vw,64px)">&ldquo;Best fitness app I've ever paid for. Once.&rdquo;</div>
-          <div class="label">&mdash; Play Store early access review</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Train smarter</span><span class="star">&#10022;</span>
-      <span>Lift forever</span><span class="star">&#10022;</span>
-      <span>No subscription</span><span class="star">&#10022;</span>
-      <span>Pay once</span><span class="star">&#10022;</span>
-      <span>Built for athletes</span><span class="star">&#10022;</span>
-      <span>Coached by AI</span><span class="star">&#10022;</span>
-      <span>Train smarter</span><span class="star">&#10022;</span>
-      <span>Lift forever</span><span class="star">&#10022;</span>
-      <span>No subscription</span><span class="star">&#10022;</span>
-      <span>Pay once</span><span class="star">&#10022;</span>
-      <span>Built for athletes</span><span class="star">&#10022;</span>
-      <span>Coached by AI</span><span class="star">&#10022;</span>
+    <div class="cs-cta-group">
+      <a href="mailto:hello@lyftora.in?subject=Early%20Access%20%E2%80%94%20Keep%20me%20posted&body=Hi%20Lyftora%20team%2C%0A%0APlease%20keep%20me%20updated%20on%20the%20launch.%0A%0AThanks!" class="cs-btn-primary">
+        Get early access updates
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <span class="cs-email-note">Drop a mail at hello@lyftora.in &mdash; we reply to every one.</span>
     </div>
   </div>
 
-  <!-- MANIFESTO / COMPARE -->
-  <section class="sec" id="manifesto" style="padding-top:80px;">
-    <div class="compare">
-      <div class="container">
-        <div class="sec-head compare-head reveal">
-          <span class="kicker">The subscription tax</span>
-          <h2 class="sec-title">Fitness apps shouldn't <em>own</em> you.</h2>
-          <p class="sec-sub" style="color:rgba(255,255,255,.7)">
-            Five years. Same workouts. Same hunger. Wildly different price tags.
-            Tap the years below to see how fast a &ldquo;cheap monthly fee&rdquo; becomes a second rent cheque.
-          </p>
-        </div>
+  <div class="cs-scroll-cue" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    Scroll
+  </div>
+</section>
 
-        <div class="years reveal">
-          <span>See cost over</span>
-          <div class="years-pills">
-            <button class="years-pill" data-years="1">1 yr</button>
-            <button class="years-pill" data-years="3">3 yrs</button>
-            <button class="years-pill active" data-years="5">5 yrs</button>
-            <button class="years-pill" data-years="10">10 yrs</button>
-          </div>
-        </div>
+<!-- ── TICKER ── -->
+<div class="cs-ticker" aria-hidden="true">
+  <div class="cs-ticker-track">
+    <!-- two copies for seamless loop -->
+    <span class="cs-ticker-item">AI Personal Trainer</span>
+    <span class="cs-ticker-item">Medical Screening</span>
+    <span class="cs-ticker-item">Pantry-First Nutrition</span>
+    <span class="cs-ticker-item">Six Expert Roles</span>
+    <span class="cs-ticker-item">Plans from ₹299 · Cancel Anytime</span>
+    <span class="cs-ticker-item">Offline-First · 15 MB</span>
+    <span class="cs-ticker-item">Android &amp; iOS</span>
+    <span class="cs-ticker-item">4-Week Progressive Plans</span>
+    <span class="cs-ticker-item">AI Personal Trainer</span>
+    <span class="cs-ticker-item">Medical Screening</span>
+    <span class="cs-ticker-item">Pantry-First Nutrition</span>
+    <span class="cs-ticker-item">Six Expert Roles</span>
+    <span class="cs-ticker-item">Plans from ₹299 · Cancel Anytime</span>
+    <span class="cs-ticker-item">Offline-First · 15 MB</span>
+    <span class="cs-ticker-item">Android &amp; iOS</span>
+    <span class="cs-ticker-item">4-Week Progressive Plans</span>
+  </div>
+</div>
 
-        <div class="compare-chart reveal" id="cmp-chart"></div>
+<!-- ── WHAT'S INSIDE ── -->
+<section class="cs-inside">
+  <div class="cs-container">
+    <div class="cs-sec-head reveal">
+      <span class="cs-kicker">—— What's coming</span>
+      <h2 class="cs-sec-title">Six experts.<br/><em>One coach.</em></h2>
+    </div>
+
+    <div class="cs-cards">
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--coral)"></div>
+        <div class="cs-card-n">01</div>
+        <h3>The <em>trainer</em></h3>
+        <p>Periodised 4-week blocks. Progressive overload tuned to your schedule, equipment, and recovery capacity — not a generic template.</p>
+        <span class="cs-card-tag">Strength &amp; Conditioning</span>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--lime)"></div>
+        <div class="cs-card-n">02</div>
+        <h3>The <em>dietitian</em></h3>
+        <p>Macro targets from TDEE, not a slider. Meals built from your actual pantry in your actual cuisine — Indian, South Indian, Middle Eastern, and more.</p>
+        <span class="cs-card-tag">Nutrition Science</span>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--coral)"></div>
+        <div class="cs-card-n">03</div>
+        <h3>Sports <em>medicine</em></h3>
+        <p>13 medical flags handled. Kidney disease, PCOS, heart conditions, injuries — each modifies the plan, not ignores it.</p>
+        <span class="cs-card-tag">Clinical Safety</span>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--lime)"></div>
+        <div class="cs-card-n">04</div>
+        <h3>The <em>psychologist</em></h3>
+        <p>Behavioural patterns tracked. Habit loops built. Streak logic that motivates without punishing a rest day.</p>
+        <span class="cs-card-tag">Behaviour &amp; Habits</span>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--coral)"></div>
+        <div class="cs-card-n">05</div>
+        <h3>The sport <em>coach</em></h3>
+        <p>Endurance, combat, team sports, yoga — sport-specific periodisation that layers on top of your general conditioning.</p>
+        <span class="cs-card-tag">Sport-Specific</span>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-accent" style="background:var(--lime)"></div>
+        <div class="cs-card-n">06</div>
+        <h3>Clinical <em>oversight</em></h3>
+        <p>Refuses to plan without screening. Refers serious cases to physicians. Shows its maths so you can trust every number.</p>
+        <span class="cs-card-tag">Safety First</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FEATURES BENTO -->
-  <section class="sec" id="features">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">What makes it tick</span>
-        <h2 class="sec-title">Built to coach, not to <em>upsell</em>.</h2>
+<!-- ── WHY DIFFERENT ── -->
+<section class="cs-why">
+  <div class="cs-container">
+    <div class="cs-sec-head reveal">
+      <span class="cs-kicker">—— Why Lyftora</span>
+      <h2 class="cs-sec-title" style="color:var(--cream)">What makes it<br/><em style="color:var(--lime)">different.</em></h2>
+    </div>
+
+    <div class="cs-rows">
+      <div class="cs-row reveal">
+        <div class="cs-row-label">Pay <em>once.</em></div>
+        <div class="cs-row-body">₹499 unlocks the entire app — forever, across every device. No locked tiers. No premium workouts. No upsell mid-set.</div>
+        <div class="cs-row-tag">No subscription</div>
       </div>
-
-      <div class="bento">
-        <div class="b-card b-1 reveal">
-          <span class="tag">AI Coach</span>
-          <h3>A coach who actually remembers your last injury.</h3>
-          <p>Powered by Claude. Tuned on a decade of training science. Adjusts on the fly &mdash; less if you slept badly, more if you PR'd yesterday.</p>
-          <div class="stamp-wrap" aria-hidden="true">
-            <svg viewBox="0 0 100 100">
-              <defs>
-                <path id="circle-txt" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none"/>
-              </defs>
-              <text font-family="Space Grotesk" font-size="9" font-weight="600" letter-spacing="2" fill="#0E0E12">
-                <textPath href="#circle-txt">AI COACH &middot; ON YOUR SIDE &middot; AI COACH &middot; ON YOUR SIDE &middot; </textPath>
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <div class="b-card b-2 reveal rep-card">
-          <span class="hint">Click to add a rep</span>
-          <div class="rep-num" id="rep-num">0</div>
-          <button id="rep-btn" data-magnet>Add rep</button>
-        </div>
-
-        <div class="b-card b-3 reveal">
-          <span class="tag">Always on</span>
-          <h3>Works offline. Wherever your grind goes.</h3>
-          <p>Gyms lose Wi-Fi. Flights don't care. Lyftora logs, plans, and tracks without a single bar of signal &mdash; and syncs the moment you're back.</p>
-        </div>
-
-        <div class="b-card b-4 reveal">
-          <span class="tag">Nutrition</span>
-          <h3>Global food library with real regional macros.</h3>
-          <p>From oats to overnight dosa. Every meal, counted honestly.</p>
-        </div>
-
-        <div class="b-card b-5 reveal">
-          <span class="tag">Performance</span>
-          <h3>15 MB. 2 s cold start. Zero bloat.</h3>
-          <p>Built to fly on the phone you already own &mdash; no flagship required.</p>
-        </div>
-
-        <div class="b-card b-6 reveal">
-          <span class="tag">Forever</span>
-          <h3>Every update, included.</h3>
-          <p>Buy the app once. Get every feature we ever ship &mdash; on every device.</p>
-        </div>
+      <div class="cs-row reveal">
+        <div class="cs-row-label">Your <em>pantry.</em></div>
+        <div class="cs-row-body">We ask what's in your kitchen right now. Your plan is built from eggs, paneer, oats — not an aspirational ingredient sheet you'll abandon by Friday.</div>
+        <div class="cs-row-tag">Real food</div>
+      </div>
+      <div class="cs-row reveal">
+        <div class="cs-row-label">Clinically <em>safe.</em></div>
+        <div class="cs-row-body">Medical screening is required, not optional. The coach refuses to start without it, and every plan modification is visible and explained.</div>
+        <div class="cs-row-tag">No shortcuts</div>
+      </div>
+      <div class="cs-row reveal">
+        <div class="cs-row-label">Works <em>offline.</em></div>
+        <div class="cs-row-body">15 MB download. Plans, calculations, and history live on your device. Train, log, and review without a single bar of signal.</div>
+        <div class="cs-row-tag">Always available</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- COACH CHAT -->
-  <section class="sec" id="coach">
-    <div class="container">
-      <div class="coach-wrap">
-        <div class="reveal">
-          <span class="kicker">The coach</span>
-          <h2 class="sec-title" style="margin:20px 0;">Ask anything. Get a plan, not a <em>paywall</em>.</h2>
-          <a href="lyftora-coach-ai.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;margin-bottom:4px;font-size:13px;font-weight:600;color:var(--violet);letter-spacing:.03em;">Explore Coach AI in depth &#8599;</a>
-          <ul class="coach-copy" style="margin-top:20px">
-            <li>Knows your schedule <span>CONTEXT</span></li>
-            <li>Learns your patterns <span>MEMORY</span></li>
-            <li>Adapts for injuries <span>ADJUST</span></li>
-            <li>Plans meals around your week <span>NUTRITION</span></li>
-            <li>Available 24 / 7 <span>ALWAYS</span></li>
-            <li>Never forgets a PR <span>RECALL</span></li>
-          </ul>
+<!-- ── BUILD STATUS ── -->
+<section class="cs-building">
+  <div class="cs-container">
+    <div class="cs-sec-head reveal">
+      <span class="cs-kicker">—— Build status</span>
+      <h2 class="cs-sec-title">Where we<br/><em>are right now.</em></h2>
+    </div>
+
+    <div class="cs-progress-grid">
+      <div class="cs-progress-item reveal">
+        <div class="cs-progress-top">
+          <span class="cs-progress-name">AI Coach Engine</span>
+          <span class="cs-progress-pct">90%</span>
         </div>
-
-        <div class="chat-box reveal">
-          <div class="chat-head-2">
-            <div class="ava">L</div>
-            <div>
-              <strong>Coach</strong>
-              <small>Online &middot; reading your history</small>
-            </div>
-            <span class="live">LIVE</span>
-          </div>
-          <div class="bb user">I've got 45 minutes, dumbbells only. Want to cut 6 kg by June.</div>
-          <div class="bb coach">Got it. 4-day split, conditioning finishers, calories trimmed 18%. I'll queue a grocery list too &mdash; want Mediterranean or high-protein Asian?</div>
-          <div class="bb user">High protein Asian, please.</div>
-          <div class="bb typing" aria-label="Coach is typing"><span></span><span></span><span></span></div>
-          <div class="send-row">
-            <input type="text" placeholder="Ask your coach anything&hellip;" id="coach-input" />
-            <button id="coach-send" data-magnet>Send</button>
-          </div>
+        <div class="cs-progress-bar">
+          <div class="cs-progress-fill" style="width:90%;--delay:.1s"></div>
         </div>
+        <p class="cs-progress-label">Six expert roles, medical screening, calculations — core logic complete. Final tuning underway.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOD DECK -->
-  <section class="sec" style="padding-bottom:140px">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">Nutrition that knows you</span>
-        <h2 class="sec-title">Drag a card. <em>Meet your plate.</em></h2>
-        <p class="sec-sub">A food library that counts what most apps skip &mdash; the oil in your dosa, the butter in your paratha, the marinade on your chicken. Drag the deck.</p>
-      </div>
-
-      <div class="plate-lab" id="plate-lab">
-        <div class="plate-stage" id="plate-stage">
-          <div class="plate-disk"></div>
-          <div class="plate-items" id="plate-items"></div>
-          <div class="plate-ring">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(0,0,0,.06)" stroke-width="2"/>
-              <circle id="ring-p" cx="50" cy="50" r="46" fill="none" stroke="#FF5A3C" stroke-width="3" stroke-dasharray="0 289" stroke-linecap="round"/>
-              <circle id="ring-c" cx="50" cy="50" r="42" fill="none" stroke="#F6D040" stroke-width="3" stroke-dasharray="0 264" stroke-linecap="round"/>
-              <circle id="ring-f" cx="50" cy="50" r="38" fill="none" stroke="#7B5CFF" stroke-width="3" stroke-dasharray="0 239" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="plate-center">
-            <div class="k"><span id="kcal-n">0</span><small>kcal on your plate</small></div>
-          </div>
-          <div class="saved-toast" id="saved-toast">Logged to breakfast &#10003;</div>
+      <div class="cs-progress-item reveal">
+        <div class="cs-progress-top">
+          <span class="cs-progress-name">Nutrition Engine</span>
+          <span class="cs-progress-pct">85%</span>
         </div>
-
-        <div class="lab-panel">
-          <div class="lab-head">
-            <h4>Build your <em>plate.</em></h4>
-            <div class="meal-pill" role="tablist">
-              <button class="on" data-meal="Breakfast">Breakfast</button>
-              <button data-meal="Lunch">Lunch</button>
-              <button data-meal="Dinner">Dinner</button>
-            </div>
-          </div>
-          <p style="color:var(--muted);font-size:14.5px;max-width:48ch">Tap ingredients. Watch calories, protein, carbs and fat update in real time. The ring around the plate fills as you hit your goals.</p>
-
-          <div class="ing-grid" id="ing-grid"></div>
-
-          <div class="macros">
-            <div class="macro-bar macro-p"><div class="t"><span>Protein</span><span><span id="m-p">0</span>g</span></div><div class="track"><div class="fill" id="f-p"></div></div></div>
-            <div class="macro-bar macro-c"><div class="t"><span>Carbs</span><span><span id="m-c">0</span>g</span></div><div class="track"><div class="fill" id="f-c"></div></div></div>
-            <div class="macro-bar macro-f"><div class="t"><span>Fat</span><span><span id="m-f">0</span>g</span></div><div class="track"><div class="fill" id="f-f"></div></div></div>
-          </div>
-
-          <div class="lab-actions">
-            <button class="clr" id="clr-plate">Clear plate</button>
-            <button class="save" id="save-meal">Log meal &rarr;</button>
-            <span class="goal">Goal &middot; <b>600 kcal</b> / 40g P</span>
-          </div>
+        <div class="cs-progress-bar">
+          <div class="cs-progress-fill" style="width:85%;--delay:.2s"></div>
         </div>
+        <p class="cs-progress-label">Pantry-first meal planning across 8 regional cuisines. Testing edge cases in budget tiers.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="sec" style="padding:40px 0">
-    <div class="stats">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat reveal">
-            <div class="num" data-counter="15" data-suffix=" MB">0</div>
-            <div class="ll">App size</div>
-            <p class="dd">Smaller than the cache on your photo app.</p>
-          </div>
-          <div class="stat reveal">
-            <div class="num" data-counter="2" data-suffix=" s">0</div>
-            <div class="ll">Cold start</div>
-            <p class="dd">Open, log, close. Before you finish your water.</p>
-          </div>
-          <div class="stat reveal">
-            <div class="num" data-counter="100" data-suffix="%">0</div>
-            <div class="ll">Offline capable</div>
-            <p class="dd">Every feature works without a single bar of signal.</p>
-          </div>
+      <div class="cs-progress-item reveal">
+        <div class="cs-progress-top">
+          <span class="cs-progress-name">Android App</span>
+          <span class="cs-progress-pct">75%</span>
         </div>
+        <div class="cs-progress-bar">
+          <div class="cs-progress-fill" style="width:75%;--delay:.3s"></div>
+        </div>
+        <p class="cs-progress-label">Core screens built. Workout logger, plan viewer, and coach interface in active development.</p>
+      </div>
+      <div class="cs-progress-item reveal">
+        <div class="cs-progress-top">
+          <span class="cs-progress-name">iOS App</span>
+          <span class="cs-progress-pct">40%</span>
+        </div>
+        <div class="cs-progress-bar">
+          <div class="cs-progress-fill" style="width:40%;background:var(--coral);--delay:.4s"></div>
+        </div>
+        <p class="cs-progress-label">Following Android launch. Targeting late 2026. Buy on Android now — iOS login, no second charge.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRICING -->
-  <section class="sec pricing" id="pricing">
-    <div class="container">
-      <div class="reveal">
-        <span class="kicker" style="justify-content:center;">Pricing &middot; radically simple</span>
-        <h2 class="sec-title" style="margin:20px auto 0;text-align:center;">One price. <em>One life.</em></h2>
-      </div>
-
-      <div class="price-display-2 reveal">
-        <span class="rupee">&#8377;</span>
-        <span class="num" id="price-num">499</span>
-        <span class="once">one time</span>
-      </div>
-      <p class="price-para-2 reveal">
-        Not monthly. Not yearly. Not &ldquo;premium unlocked at level 3&rdquo;.
-        You pay once &mdash; then you train for as long as you live.
-      </p>
-
-      <div class="reveal">
-        <a href="#" class="btn btn-primary" id="buy-btn" data-magnet>
-          Download on Play Store
-          <span class="arrow">&rarr;</span>
-        </a>
-      </div>
-
-      <div class="price-meta reveal">
-        <span>&#10003; $6.99 international</span>
-        <span>&#10003; Updates always free</span>
-        <span>&#10003; 30-day refund</span>
-        <span>&#10003; Android &middot; iOS &middot; Web</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sec" id="faq" style="padding-top:80px">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">Answers</span>
-        <h2 class="sec-title">You asked. <em>We answered.</em></h2>
-      </div>
-      <div class="faq reveal">
-        <details>
-          <summary>&#8377;499 for everything &mdash; really? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">Yes. One payment unlocks the entire app, forever, across every device you use. No locked tiers. No &ldquo;premium&rdquo; workouts. No upsell pop-up mid-set.</div>
-        </details>
-        <details>
-          <summary>What's the catch? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">There isn't one. Optional expansion packs &mdash; sport-specific programs, regional cuisine libraries &mdash; exist as tiny one-time add-ons if you want them. The core app is yours outright.</div>
-        </details>
-        <details>
-          <summary>Is the AI coach good enough to replace a human trainer? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">For most people training for strength, conditioning, or weight management &mdash; yes. For elite athletes, Lyftora works alongside your human coach as a 24/7 memory and logger. It's a tool, tuned carefully.</div>
-        </details>
-        <details>
-          <summary>Does it work on older phones? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">Yes. 15 MB download, runs smoothly on 2 GB RAM, under 2 s cold start. We benchmarked on budget devices first &mdash; flagships came second.</div>
-        </details>
-        <details>
-          <summary>When does iOS launch? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">End of June 2026, at the same price. Your purchase follows you &mdash; buy on Android, log in on iOS, no second charge.</div>
-        </details>
-        <details>
-          <summary>What if I don't love it? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans">Full refund inside 30 days, no forms, no guilt. We'd rather earn a fan for a decade than trap a user for a month.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final">
-    <div class="container">
-      <h2>Lift <em>forever.</em></h2>
-      <p>The last fitness app you'll ever pay for. Ship date: 29 May 2026.</p>
-      <a href="#" class="btn btn-primary" data-magnet>
-        Download now
-        <span class="arrow">&rarr;</span>
-      </a>
-    </div>
-  </section>
-
-</main>
+<!-- ── FINAL CTA ── -->
+<section class="cs-final">
+  <h2 class="cs-final-h2 reveal">Be first.<br/><em>Not left out.</em></h2>
+  <p class="cs-final-sub reveal">
+    We're building in public and keeping our early list small.
+    Drop us an email — we'll tell you the moment Lyftora is ready to download.
+  </p>
+  <div class="cs-final-cta reveal">
+    <a href="mailto:hello@lyftora.in?subject=Early%20Access%20%E2%80%94%20Keep%20me%20posted&body=Hi%20Lyftora%20team%2C%0A%0APlease%20keep%20me%20updated%20on%20the%20launch.%0A%0AThanks!" class="cs-btn-primary">
+      hello@lyftora.in
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <span class="cs-final-note">No spam. One email when we ship. That's it.</span>
+  </div>
+</section>
 
 <footer></footer>
 
+</div><!-- /.cs-wrap -->
+
 <script src="js/navbar.js" defer></script>
 <script src="js/footer.js" defer></script>
-<script src="js/index.js" defer></script>
+<script>
+/* Reveal on scroll */
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
