@@ -7,7 +7,6 @@
  * Pages:
  *   Home      → index.html
  *   Coach AI  → lyftora-coach-ai.html
- *   Pricing   → pricing.html
  */
 (function () {
   'use strict';
@@ -16,11 +15,10 @@
   const PAGES = [
     { label: 'Home',     href: 'index.html',            key: 'home'     },
     { label: 'Coach AI', href: 'lyftora-coach-ai.html', key: 'coach-ai' },
-    { label: 'Pricing',  href: 'pricing.html',          key: 'pricing'  },
   ];
 
-  const CTA_HREF  = 'pricing.html';
-  const CTA_LABEL = 'Get Lyftora';
+  const CTA_HREF  = 'index.html#waitlist';
+  const CTA_LABEL = 'Join waitlist';
 
   /** Detect which page is currently active from the URL */
   function detectActivePage() {
@@ -30,7 +28,6 @@
       path.endsWith('/index.html') ||
       path.endsWith('/')
     ) return 'home';
-    if (path.includes('pricing') || path.includes('/plans')) return 'pricing';
     if (
       path.includes('coach-ai') ||
       path.includes('coach') ||
