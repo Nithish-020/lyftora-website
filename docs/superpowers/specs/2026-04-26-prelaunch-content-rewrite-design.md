@@ -62,6 +62,58 @@ Sections deleted from current `index.html`: detailed features list, FAQ block, a
 - Remove any code referencing deleted sections (FAQ accordion, etc.) — to be inventoried during plan/implementation.
 - Add a stub waitlist submit handler that calls `event.preventDefault()` and logs to `console.info` only. Phase 3 replaces this stub.
 
+### Coach-AI: replace price chart with features comparison
+
+The existing `<section id="pricing-compare">` (the 5-year SVG chart with concrete rupee figures — ₹3,60,000 vs ₹17,940) contradicts pre-launch (no concrete pricing). Replace it.
+
+**Removed:**
+- `lyftora-coach-ai.html`: the entire `<section id="pricing-compare">` block (currently lines 551–598), including the `.pchart-side`, `.pchart-key`, and inline SVG.
+- `css/coach-ai.css`: the `.pchart`, `.pchart-wrap`, `.pchart-side`, `.pchart-key`, `.line.l1/.l2/.l3/.lw`, `.gx`, `.ax`, `.annot` rules.
+
+**Added:**
+- New `<section id="vs">` in the same position, titled *"Same problem. Different approach."* with the existing kicker rhythm.
+- 4-column grid (mobile: 1-col stack), one column per option:
+  - **Personal trainer** — human / scheduled / no medical baseline / no math shown
+  - **Other fitness apps** — generic / pre-made plans / no medical screening
+  - **Chatbot subscriptions** — generates plans / no calculations / no refusals
+  - **Lyftora Coach AI** — six experts / medical screening / open math / refuses when it should *(highlighted column, lime accent — same visual treatment as the old `.winner` row)*
+- Each column: mono uppercase heading + 4 short bullet rows using `✓` / `—` glyphs. **No numbers, no rupees, no time horizons.**
+- New CSS block in `css/coach-ai.css` under a `/* ── VS ── */` heading. Replaces the `.pchart-*` rules entirely.
+- Reuses the existing `.reveal` pattern for scroll-in animation.
+
+### Coach-AI: FAQ section — newspaper-rule editorial restyle + animation fix
+
+Existing FAQ (`#faq`) feels visually disconnected (white-tinted `[open]` background breaks the cream-tone rhythm) and the open/close animation flickers (race between native `<details>` `open` toggle and the JS height animation in `js/coach-ai.js:244-304`).
+
+**Visual changes (`css/coach-ai.css`):**
+- Drop `.faq[open] { background: color-mix(in srgb, #fff 50%, transparent); }` — open state reads via the coral summary text and rotated `+` icon only.
+- `.faqs` container gets a 2px ink top rule (currently 1px line-strong); items keep 1px ink-strong dividers.
+- Each `<details class="faq">` gets a small mono meta tag inside the summary, before the question text: `Q · 01`, `Q · 02`, …, `Q · 06`. Style mirrors the `R · 01` pattern in `.refuse .n` (mono, uppercase, muted, narrow tracking).
+- Tighten summary letter-spacing to `-.015em` for editorial weight.
+
+**Markup change (`lyftora-coach-ai.html`):**
+- Each `<summary>` gets the meta span:
+  ```html
+  <summary>
+    <span class="q-n">Q · 01</span>
+    <span class="q-t">Is Coach AI a real trainer or a chatbot?</span>
+    <span class="icn" aria-hidden="true">+</span>
+  </summary>
+  ```
+- The first FAQ keeps `open` for default-expanded state.
+
+**Animation fix (`js/coach-ai.js:244-304`):**
+
+Current code calls `faq.setAttribute('open', '')` *then* animates height from 0 → scrollHeight. The browser instantly expands the `<details>` element on `open`, then the JS height animation runs on top — this is the visible flicker.
+
+Replace with:
+- Keep the `open` attribute toggle, but **set inline `height: 0; overflow: hidden` on `.a` BEFORE setting `open`**, so when the browser expands the details element, content is already height-pinned to 0.
+- Force a reflow (`content.offsetHeight`) before starting the animation.
+- Animate inline `height` from `0` → `scrollHeight + 'px'`, with `overflow: hidden` held throughout.
+- On animation finish, clear inline `height` and `overflow` so content reflows naturally.
+- Same fix mirrored in `closePanel`: read current height, set it inline, force reflow, animate to 0, then remove `open` after animation completes (already does the last part).
+- `prefers-reduced-motion` path stays — skip animation entirely, just toggle `open`.
+
 ### Form markup (canonical — used in hero and final CTA)
 
 ```html
@@ -105,3 +157,5 @@ The hero form gets `id="waitlist"` on its wrapper (the anchor target). The final
 - Coach-AI shows the pre-launch banner, all CTAs route to `index.html#waitlist`.
 - Submitting the form does nothing visible (stub) but does not navigate or error.
 - Footer reads "Pre-launch · Coming soon"; Product column is Features / FAQ only.
+- Coach-AI: the price-chart SVG is gone; in its place is a 4-column features comparison with `✓` / `—` glyphs and no rupee figures.
+- Coach-AI FAQ: no white background fill on open items; `Q · 01` … `Q · 06` mono meta tags visible; click-toggle is smooth (no flicker).
