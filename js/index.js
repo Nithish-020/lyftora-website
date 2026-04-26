@@ -389,25 +389,67 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
   const forms = document.querySelectorAll('.waitlist-form');
   if (!forms.length) return;
 
+  // Require local@domain.tld — TLD must be 2+ alphabetic characters
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(value.trim());
+  }
+
+  function setError(input, form, status, msg) {
+    input.classList.add('is-error');
+    form.classList.add('has-error');
+    input.setAttribute('aria-invalid', 'true');
+    if (status) {
+      status.textContent = msg;
+      status.classList.remove('is-success');
+      status.classList.add('is-error');
+    }
+  }
+
+  function clearError(input, form, status) {
+    input.classList.remove('is-error');
+    form.classList.remove('has-error');
+    input.removeAttribute('aria-invalid');
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('is-error');
+    }
+  }
+
   forms.forEach(form => {
+    const input  = form.querySelector('input[name="email"]');
+    const status = form.parentElement.querySelector('.waitlist-status');
+
+    // Clear error state the moment the user starts retyping
+    input.addEventListener('input', () => clearError(input, form, status));
+
+    // Validate on blur so users get feedback before hitting submit
+    input.addEventListener('blur', () => {
+      const val = input.value.trim();
+      if (val && !isValidEmail(val)) {
+        setError(input, form, status, 'Please enter a valid email address.');
+      }
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const status = form.parentElement.querySelector('.waitlist-status');
-      const email = form.querySelector('input[name="email"]').value.trim();
+      const email = input.value.trim();
 
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        if (status) {
-          status.textContent = 'Please enter a valid email.';
-          status.classList.remove('is-success');
-          status.classList.add('is-error');
-        }
+      if (!email) {
+        setError(input, form, status, 'Email address is required.');
+        input.focus();
         return;
       }
 
+      if (!isValidEmail(email)) {
+        setError(input, form, status, 'Please enter a valid email address.');
+        input.focus();
+        return;
+      }
+
+      clearError(input, form, status);
       console.info('[waitlist stub]', { email });
       if (status) {
         status.textContent = "Thanks! We'll be in touch.";
-        status.classList.remove('is-error');
         status.classList.add('is-success');
       }
       form.reset();

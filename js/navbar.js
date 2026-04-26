@@ -99,6 +99,17 @@
     document.body.insertAdjacentElement('afterbegin', drawer);
     document.body.insertAdjacentElement('afterbegin', nav);
 
+    /* ── Offset nav below prelaunch banner (if present) ── */
+    function adjustNavForBanner() {
+      var banner = document.querySelector('.prelaunch-banner');
+      if (!banner) return;
+      var bh = banner.offsetHeight;
+      nav.style.top = (bh + 12) + 'px';
+      drawer.style.top = (bh + 70) + 'px';
+    }
+    adjustNavForBanner();
+    window.addEventListener('resize', adjustNavForBanner);
+
     /* ── Custom cursor ── */
     var dot = document.createElement('div');
     dot.id = 'cursor';
