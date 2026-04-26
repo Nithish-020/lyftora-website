@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/navbar.css" />
 <link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/waitlist.css" />
 
 <style>
 /* ── Tokens (mirrored from coach-ai.css) ── */
@@ -540,11 +541,21 @@
     </p>
 
     <div class="cs-cta-group">
-      <a href="mailto:hello@lyftora.in?subject=Early%20Access%20%E2%80%94%20Keep%20me%20posted&body=Hi%20Lyftora%20team%2C%0A%0APlease%20keep%20me%20updated%20on%20the%20launch.%0A%0AThanks!" class="cs-btn-primary">
-        Get early access updates
-        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <span class="cs-email-note">Drop a mail at hello@lyftora.in &mdash; we reply to every one.</span>
+      <div id="waitlist" class="waitlist">
+        <form class="waitlist-form" novalidate>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@email.com"
+            autocomplete="email"
+            aria-label="Email address"
+          />
+          <button type="submit">Join waitlist <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="waitlist-status" role="status" aria-live="polite"></p>
+        <p class="waitlist-microcopy">First 100 get one month free &middot; Early access for everyone</p>
+      </div>
     </div>
   </div>
 
@@ -723,14 +734,24 @@
   <h2 class="cs-final-h2 reveal">Be first.<br/><em>Not left out.</em></h2>
   <p class="cs-final-sub reveal">
     We're building in public and keeping our early list small.
-    Drop us an email — we'll tell you the moment Lyftora is ready to download.
+    Drop your email — we'll tell you the moment Lyftora is ready to download.
   </p>
   <div class="cs-final-cta reveal">
-    <a href="mailto:hello@lyftora.in?subject=Early%20Access%20%E2%80%94%20Keep%20me%20posted&body=Hi%20Lyftora%20team%2C%0A%0APlease%20keep%20me%20updated%20on%20the%20launch.%0A%0AThanks!" class="cs-btn-primary">
-      hello@lyftora.in
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <span class="cs-final-note">No spam. One email when we ship. That's it.</span>
+    <div class="waitlist">
+      <form class="waitlist-form" novalidate>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@email.com"
+          autocomplete="email"
+          aria-label="Email address"
+        />
+        <button type="submit">Join waitlist <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="waitlist-status" role="status" aria-live="polite"></p>
+      <p class="waitlist-microcopy">No spam. One email when we ship. That's it.</p>
+    </div>
   </div>
 </section>
 
