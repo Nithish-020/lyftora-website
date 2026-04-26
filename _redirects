@@ -1,5 +1,8 @@
 /coach-ai          /lyftora-coach-ai.html    301
 /coach             /lyftora-coach-ai.html    301
-/plans             /pricing.html             301
+/plans             /                         302
 /home              /                         301
 /privacy           /privacy.html             301
+/pricing.html      /                         302
+/pricing           /                         302
+/*                 /404.html                 404

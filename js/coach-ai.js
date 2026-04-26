@@ -33,43 +33,27 @@
   });
 })();
 
-/* ── Manuscript rail: highlight active step on scroll ── */
+/* ── Manuscript rail: "Five steps. Then a plan." ── */
 (() => {
-  const steps = document.querySelectorAll('.manu-step');
-  const btns = document.querySelectorAll('#rail button');
-  if (!steps.length || !btns.length) return;
+  const stream = document.querySelector('.manu-stream');
+  const btns   = document.querySelectorAll('#rail button');
+  if (!stream || !btns.length) return;
 
-  function setActiveStep(activeStep) {
-    btns.forEach(b => {
-      const isActive = b.dataset.step === activeStep;
-      b.classList.toggle('on', isActive);
-      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
-    steps.forEach(s => {
-      const isActive = s.dataset.step === activeStep;
-      if (isActive) {
-        s.removeAttribute('aria-hidden');
-      } else {
-        s.setAttribute('aria-hidden', 'true');
-      }
-    });
-  }
-
-  const io = new IntersectionObserver(es => {
-    es.forEach(e => {
-      if (e.isIntersecting) {
-        setActiveStep(e.target.dataset.step);
-      }
-    });
-  }, { rootMargin: '-40% 0px -50% 0px' });
-
-  steps.forEach(s => io.observe(s));
+  const DESKTOP = 980;
+  function isDesktop() { return window.innerWidth >= DESKTOP; }
 
   btns.forEach(b => b.addEventListener('click', () => {
-    const t = document.getElementById('step-' + b.dataset.step);
-    if (t) {
-      setActiveStep(b.dataset.step);
-      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const card = document.getElementById('step-' + b.dataset.step);
+    if (!card) return;
+
+    btns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
+
+    if (isDesktop()) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
     }
   }));
 })();
