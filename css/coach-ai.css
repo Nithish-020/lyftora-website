@@ -737,6 +737,58 @@ svg { display: block; }
 .cal .d.w4 { background: var(--ink); color: var(--cream); }
 .cal .d.rest { background: transparent; color: var(--muted); opacity: .4; }
 
+/* ── Manuscript: tighten for small screens (≤ 540px) ── */
+@media (max-width: 540px) {
+  /* Card itself */
+  .manu-step {
+    padding: 22px 18px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+  .manu-step .step-n { font-size: 56px; line-height: .85; }
+  .manu-step h3 { font-size: 24px; margin-top: -2px; }
+  .manu-step p { font-size: 13.5px; line-height: 1.55; }
+
+  /* Viz wrapper */
+  .viz {
+    padding: 14px;
+    min-height: 0;
+    font-size: 12px;
+    gap: 10px;
+  }
+  .viz .vlab { font-size: 9.5px; }
+
+  /* Step 1 — profile fill: trim from 8 to 6 rows on phones */
+  .viz-fill { gap: 4px 14px; }
+  .viz-fill div { padding: 6px 0; }
+  .viz-fill div:nth-child(n+7) { display: none; }
+  .viz-fill span:first-child { font-size: 10px; }
+
+  /* Step 2 — medical checks */
+  .chk { gap: 6px; }
+  .chk li { font-size: 11.5px; padding: 7px 10px; gap: 8px; }
+  .chk .mk { width: 18px; height: 18px; font-size: 11px; }
+
+  /* Step 3 — pantry */
+  .pantry { font-size: 12px; line-height: 1.55; }
+  .pantry .prompt { font-size: 10px; }
+
+  /* Step 4 — calculator readout */
+  .calcbox { gap: 8px; }
+  .calcbox .cell { padding: 10px 12px; gap: 4px; border-radius: 10px; }
+  .calcbox .cell b { font-size: 22px; }
+  .calcbox .cell em { font-size: 12px; }
+  .calcbox .cell span { font-size: 9px; }
+
+  /* Step 5 — calendar: trim to 2 weeks (14 days) so cells stay legible */
+  .cal { gap: 3px; }
+  .cal .d { font-size: 9px; border-radius: 5px; }
+  .cal > .d:nth-child(n+15) { display: none; }
+
+  /* Rail pill buttons */
+  .manu-rail button { padding: 7px 11px; font-size: 10.5px; }
+}
+
 /* ── STORYBOARD (Features) ── */
 .story {
   display: grid;
