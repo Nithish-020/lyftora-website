@@ -18,7 +18,6 @@
         <h4>Product</h4>
         <ul>
           <li><a href="${BASE}index.html#features">Features</a></li>
-          <li><a href="${BASE}pricing.html">Pricing</a></li>
           <li><a href="${BASE}lyftora-coach-ai.html">Coach AI</a></li>
           <li><a href="${BASE}index.html#faq">FAQ</a></li>
         </ul>
@@ -45,6 +44,7 @@
     </div>
     <div class="foot-bottom">
       <div>&copy; ${new Date().getFullYear()} Lyftora &middot; Made with care.</div>
+      <div>Pre-launch &middot; Coming soon</div>
     </div>
   </div>
 </footer>`;
