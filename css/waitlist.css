@@ -1,20 +1,26 @@
 /* ── Waitlist form ── */
 .waitlist {
+  width: 100%;
   max-width: 480px;
   margin-inline: auto;
   position: relative;
   z-index: 2;
+  isolation: isolate;
 }
 .waitlist-form input,
 .waitlist-form button {
   pointer-events: auto;
   position: relative;
+  z-index: 1;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 90, 60, .15);
 }
 /* Mobile-first: input and button are independent pills, stacked */
 .waitlist-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .waitlist-form input {
   flex: 1;
