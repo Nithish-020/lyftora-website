@@ -383,3 +383,34 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
     }, 50);
   });
 })();
+
+/* ── Waitlist form stub (Phase 3 will wire to /api/waitlist + Resend) ── */
+(() => {
+  const forms = document.querySelectorAll('.waitlist-form');
+  if (!forms.length) return;
+
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = form.parentElement.querySelector('.waitlist-status');
+      const email = form.querySelector('input[name="email"]').value.trim();
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (status) {
+          status.textContent = 'Please enter a valid email.';
+          status.classList.remove('is-success');
+          status.classList.add('is-error');
+        }
+        return;
+      }
+
+      console.info('[waitlist stub]', { email });
+      if (status) {
+        status.textContent = "Thanks! We'll be in touch.";
+        status.classList.remove('is-error');
+        status.classList.add('is-success');
+      }
+      form.reset();
+    });
+  });
+})();
