@@ -518,10 +518,34 @@
   opacity: 1;
   transform: none;
 }
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #0E0E12;
+  color: #F4EFE4;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="cs-wrap">
+<main id="main">
 
 <!-- ── HERO ── -->
 <section class="cs-hero">
@@ -756,6 +780,7 @@
   </div>
 </section>
 
+</main>
 <footer></footer>
 
 </div><!-- /.cs-wrap -->
