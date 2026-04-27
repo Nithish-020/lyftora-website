@@ -7,7 +7,6 @@
  * Pages:
  *   Home      → index.html
  *   Coach AI  → lyftora-coach-ai.html
- *   Pricing   → pricing.html
  */
 (function () {
   'use strict';
@@ -16,11 +15,10 @@
   const PAGES = [
     { label: 'Home',     href: 'index.html',            key: 'home'     },
     { label: 'Coach AI', href: 'lyftora-coach-ai.html', key: 'coach-ai' },
-    { label: 'Pricing',  href: 'pricing.html',          key: 'pricing'  },
   ];
 
-  const CTA_HREF  = 'pricing.html';
-  const CTA_LABEL = 'Get Lyftora';
+  const CTA_HREF  = 'index.html#waitlist';
+  const CTA_LABEL = 'Join waitlist';
 
   /** Detect which page is currently active from the URL */
   function detectActivePage() {
@@ -30,7 +28,6 @@
       path.endsWith('/index.html') ||
       path.endsWith('/')
     ) return 'home';
-    if (path.includes('pricing') || path.includes('/plans')) return 'pricing';
     if (
       path.includes('coach-ai') ||
       path.includes('coach') ||
@@ -101,6 +98,17 @@
     /* Insert both at the very beginning of <body> */
     document.body.insertAdjacentElement('afterbegin', drawer);
     document.body.insertAdjacentElement('afterbegin', nav);
+
+    /* ── Offset nav below prelaunch banner (if present) ── */
+    function adjustNavForBanner() {
+      var banner = document.querySelector('.prelaunch-banner');
+      if (!banner) return;
+      var bh = banner.offsetHeight;
+      nav.style.top = (bh + 12) + 'px';
+      drawer.style.top = (bh + 70) + 'px';
+    }
+    adjustNavForBanner();
+    window.addEventListener('resize', adjustNavForBanner);
 
     /* ── Custom cursor ── */
     var dot = document.createElement('div');

@@ -10,7 +10,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Lyftora Coach AI — A coach who actually remembers your last injury.</title>
-<meta name="description" content="Lyftora Coach AI: six experts in one. Medical-grade screening. Pantry-first nutrition. 4-week progressive plans. Plans from ₹299/mo."/>
+<meta name="description" content="Lyftora Coach AI: six experts in one. Medical-grade screening. Pantry-first nutrition. 4-week progressive plans. Coming soon — join the waitlist."/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://lyftora.in/assets/images/lyftora-preview-thumbnail.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Lyftora — AI personal trainer. Start free, plans from ₹299/mo." />
+<meta property="og:image:alt" content="Lyftora — AI personal trainer. Pre-launch — join the waitlist." />
 
 <!-- coach-ai page -->
 <meta property="og:url" content="https://lyftora.in/lyftora-coach-ai.html" />
@@ -44,7 +44,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Lyftora Coach AI",
-  "description": "Six expert roles. Medical screening. Pantry-first nutrition. 4-week progressive plans. Start free, plans from ₹299/mo.",
+  "description": "Six expert roles. Medical screening. Pantry-first nutrition. 4-week progressive plans. Pre-launch — join the waitlist.",
   "url": "https://lyftora.in/lyftora-coach-ai"
 }
 </script>
@@ -84,8 +84,14 @@
 </script>
 <link rel="stylesheet" href="css/navbar.css"/>
 <link rel="stylesheet" href="css/footer.css"/>
+<link rel="stylesheet" href="css/waitlist.css"/>
 </head>
 <body>
+
+<aside class="prelaunch-banner" aria-label="Pre-launch announcement">
+  <span>Lyftora is in pre-launch &middot; first 100 to join the waitlist get one month free</span>
+  <a href="index.html#waitlist">Join waitlist &nbsp;&#8599;</a>
+</aside>
 
 <main id="top">
 
@@ -107,7 +113,7 @@
       <div>
         <p class="hero-lead">Six experts in one. Certified trainer. Registered dietitian. Sports medicine. Clinical coach. Behavioral psychologist. Sport conditioning. <b>Trained on real medical screening, your real pantry, and your real schedule.</b></p>
         <div class="cta-row">
-          <a href="#get" class="btn btn-primary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
+          <a href="index.html#waitlist" class="btn btn-primary">Join waitlist <span class="arc" aria-hidden="true">→</span></a>
           <a href="#how" class="btn btn-ghost">See how it thinks <span class="arc" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -117,15 +123,15 @@
           <div class="row"><small>Conditions handled</small><b>13</b></div>
           <div class="row"><small>Work-type profiles</small><b>12</b></div>
           <div class="row"><small>Weeks / plan</small><b><em>04</em></b></div>
-          <div class="row"><small>Price from</small><b>₹299<em>/mo</em></b></div>
+          <div class="row"><small>Status</small><b><em>Pre-launch</em></b></div>
         </div>
       </aside>
     </div>
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Plans from ₹299/mo · Cancel anytime.</span>
-        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Plans from ₹299/mo · Cancel anytime.</span>
+        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Pre-launch · Coming soon</span>
+        <span>CPT credentialed programming</span><span>Registered Dietitian rules</span><span>Mifflin–St Jeor BMR</span><span>Karvonen HR zones</span><span>Cycle-aware periodization</span><span>Indian · South Indian · Middle Eastern · East Asian · Latin · Western</span><span>Pre-launch · Coming soon</span>
       </div>
     </div>
   </div>
@@ -298,6 +304,16 @@
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="manu-nav" aria-label="Step navigator">
+        <button type="button" class="manu-nav-btn" data-dir="prev" aria-label="Previous step">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <span class="manu-nav-pos" aria-live="polite">1 / 5</span>
+        <button type="button" class="manu-nav-btn" data-dir="next" aria-label="Next step">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -549,50 +565,52 @@
   </div>
 </section>
 
-<!-- PRICE CHART -->
-<section class="sec" id="pricing-compare" aria-label="Price comparison">
+<!-- FEATURES COMPARISON (replaces price chart for pre-launch) -->
+<section class="sec" id="vs" aria-label="How Lyftora compares">
   <div class="container">
-    <div class="pchart-wrap reveal">
-      <div class="pchart-side">
-        <span class="kicker">—— 5 years, one chart</span>
-        <h3 style="margin-top:14px">Same problem. <em>Different math.</em></h3>
-        <p>Five years of a personal trainer buys a small car. Five years of Coach AI Pro costs less than two months with a human trainer.</p>
-        <div class="pchart-key">
-          <div><span class="sw" style="background:var(--coral)"></span><span class="nm">Personal trainer · ₹6k/mo</span><span class="v">₹3,60,000</span></div>
-          <div><span class="sw" style="background:#FF9E5C"></span><span class="nm">Other fitness apps</span><span class="v">₹1,77,000</span></div>
-          <div><span class="sw" style="background:var(--violet)"></span><span class="nm">Chatbot subscriptions</span><span class="v">₹1,20,000</span></div>
-          <div class="winner"><span class="sw" style="background:var(--lime)"></span><span class="nm">Lyftora Coach AI Pro</span><span class="v">₹17,940 · 5 yrs</span></div>
-        </div>
+    <div class="vs-wrap reveal">
+      <div class="vs-head">
+        <span class="kicker">—— Same problem. <em>Different approach.</em></span>
+        <h3 style="margin-top:14px">Why we <em>built it.</em></h3>
+        <p>Trainers, apps, and chatbots each solve a slice. Coach AI carries the whole room.</p>
       </div>
-      <div class="pchart" id="pchart">
-        <svg viewBox="0 0 700 400" preserveAspectRatio="none">
-          <g class="gx">
-            <line x1="0" y1="80"  x2="700" y2="80"/>
-            <line x1="0" y1="160" x2="700" y2="160"/>
-            <line x1="0" y1="240" x2="700" y2="240"/>
-            <line x1="0" y1="320" x2="700" y2="320"/>
-          </g>
-          <g class="ax">
-            <text x="0"   y="395">YEAR 1</text>
-            <text x="175" y="395">YEAR 2</text>
-            <text x="350" y="395">YEAR 3</text>
-            <text x="525" y="395">YEAR 4</text>
-            <text x="680" y="395" text-anchor="end">YEAR 5</text>
-            <text x="0" y="75" class="annot w">₹ SPEND</text>
-          </g>
-          <!-- Personal trainer: steep line up -->
-          <path class="line l1" d="M0,330 L175,260 L350,190 L525,120 L700,50"/>
-          <!-- Other apps -->
-          <path class="line l2" d="M0,330 L175,298 L350,262 L525,232 L700,198"/>
-          <!-- Chatbot subs -->
-          <path class="line l3" d="M0,330 L175,305 L350,280 L525,255 L700,230"/>
-          <!-- Lyftora flat -->
-          <path class="line lw" d="M0,330 L175,328 L350,326 L525,326 L700,326"/>
-          <text x="680" y="46"  class="annot" text-anchor="end">TRAINER</text>
-          <text x="680" y="194" class="annot" text-anchor="end">APPS</text>
-          <text x="680" y="226" class="annot" text-anchor="end">CHATBOTS</text>
-          <text x="680" y="320" class="annot w" text-anchor="end">LYFTORA · ₹299/MO</text>
-        </svg>
+      <div class="vs-grid">
+        <div class="vs-col">
+          <h4 class="vs-col-h">Personal trainer</h4>
+          <ul class="vs-list">
+            <li><span class="vs-glyph">✓</span> Human, in the room</li>
+            <li><span class="vs-glyph">—</span> Schedule-bound</li>
+            <li><span class="vs-glyph">—</span> No medical baseline</li>
+            <li><span class="vs-glyph">—</span> No math shown</li>
+          </ul>
+        </div>
+        <div class="vs-col">
+          <h4 class="vs-col-h">Other fitness apps</h4>
+          <ul class="vs-list">
+            <li><span class="vs-glyph">✓</span> Always available</li>
+            <li><span class="vs-glyph">—</span> Generic plans</li>
+            <li><span class="vs-glyph">—</span> No medical screening</li>
+            <li><span class="vs-glyph">—</span> One template, every body</li>
+          </ul>
+        </div>
+        <div class="vs-col">
+          <h4 class="vs-col-h">Chatbot subscriptions</h4>
+          <ul class="vs-list">
+            <li><span class="vs-glyph">✓</span> Conversational</li>
+            <li><span class="vs-glyph">—</span> Generates, doesn't calculate</li>
+            <li><span class="vs-glyph">—</span> No refusals policy</li>
+            <li><span class="vs-glyph">—</span> No follow-through</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col-win">
+          <h4 class="vs-col-h">Lyftora Coach AI</h4>
+          <ul class="vs-list">
+            <li><span class="vs-glyph">✓</span> Six experts in one</li>
+            <li><span class="vs-glyph">✓</span> Medical screening required</li>
+            <li><span class="vs-glyph">✓</span> Open math, every number</li>
+            <li><span class="vs-glyph">✓</span> Refuses when it should</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -608,27 +626,27 @@
       </div>
       <div class="faqs">
         <details class="faq" open>
-          <summary>Is Coach AI a real trainer or a chatbot?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 01</span><span class="q-t">Is Coach AI a real trainer or a chatbot?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">It's a clinical engine using six expert role-systems — trainer, dietitian, sports medicine, clinical, behavioral, sport. It refuses to plan without screening, calculates everything openly, and refers serious cases to physicians. A chatbot generates. Coach AI assembles.</div>
         </details>
         <details class="faq">
-          <summary>What if I have a medical condition?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 02</span><span class="q-t">What if I have a medical condition?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">Tell it. Thirteen conditions are handled with automatic plan modifications. Kidney disease caps protein at 0.6–0.8 g/kg. Heart disease blocks HIIT until a clearance flag. Pregnancy triggers OB-GYN referral. Each rule is visible in the plan. For clinical questions, reach us at <a href="mailto:support@lyftora.in">support@lyftora.in</a>.</div>
         </details>
         <details class="faq">
-          <summary>Does it know Indian and regional foods?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 03</span><span class="q-t">Does it know Indian and regional foods?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">Yes — Indian, South Indian, North Indian, Middle Eastern, East Asian, Latin, Western, Mixed. Plans are built from your real pantry, in your real cuisine, at your real budget tier.</div>
         </details>
         <details class="faq">
-          <summary>Can it adapt my existing diet plan?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 04</span><span class="q-t">Can it adapt my existing diet plan?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">Yes. Share your current plan — Coach AI reviews it for macro balance, calorie accuracy, and gaps, then refines rather than replaces. It respects the work you've already put in.</div>
         </details>
         <details class="faq">
-          <summary>What about pregnancy or postpartum?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 05</span><span class="q-t">What about pregnancy or postpartum?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">Pregnancy triggers an OB-GYN referral — no training programmed without clearance. Postpartum under six months prioritizes pelvic floor and gradual reconditioning.</div>
         </details>
         <details class="faq">
-          <summary>Does it work without internet?<span class="icn" aria-hidden="true">+</span></summary>
+          <summary><span class="q-n">Q · 06</span><span class="q-t">Does it work without internet?</span><span class="icn" aria-hidden="true">+</span></summary>
           <div class="a">Yes. Plans, calculations, and history live on your device. Train, log, and review without a single bar of signal.</div>
         </details>
       </div>
@@ -644,14 +662,14 @@
 </div>
 
 <!-- FINAL CTA -->
-<section class="sec" id="get" aria-label="Get Lyftora">
+<section class="sec" id="get" aria-label="Join the waitlist">
   <div class="container">
     <div class="final reveal">
       <div class="container" style="padding:0">
         <span class="kicker" style="color:rgba(244,239,228,.55)">—— One last thing</span>
         <h2 style="margin-top:18px">Coach who shows up. <em>Any plan.</em> Cancel <em>anytime.</em></h2>
         <div class="cta-row">
-          <a href="pricing.html" class="btn btn-secondary">Get Lyftora <span class="arc" aria-hidden="true">→</span></a>
+          <a href="index.html#waitlist" class="btn btn-secondary">Join waitlist <span class="arc" aria-hidden="true">→</span></a>
           <a href="index.html" class="btn btn-ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)">Read the manifesto <span class="arc" aria-hidden="true">→</span></a>
         </div>
       </div>

@@ -33,45 +33,71 @@
   });
 })();
 
-/* ── Manuscript rail: highlight active step on scroll ── */
+/* ── Manuscript rail: "Five steps. Then a plan." ── */
 (() => {
-  const steps = document.querySelectorAll('.manu-step');
-  const btns = document.querySelectorAll('#rail button');
-  if (!steps.length || !btns.length) return;
+  const stream = document.querySelector('.manu-stream');
+  const btns   = document.querySelectorAll('#rail button');
+  if (!stream || !btns.length) return;
 
-  function setActiveStep(activeStep) {
-    btns.forEach(b => {
-      const isActive = b.dataset.step === activeStep;
-      b.classList.toggle('on', isActive);
-      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
-    steps.forEach(s => {
-      const isActive = s.dataset.step === activeStep;
-      if (isActive) {
-        s.removeAttribute('aria-hidden');
-      } else {
-        s.setAttribute('aria-hidden', 'true');
-      }
-    });
-  }
-
-  const io = new IntersectionObserver(es => {
-    es.forEach(e => {
-      if (e.isIntersecting) {
-        setActiveStep(e.target.dataset.step);
-      }
-    });
-  }, { rootMargin: '-40% 0px -50% 0px' });
-
-  steps.forEach(s => io.observe(s));
+  const DESKTOP = 980;
+  function isDesktop() { return window.innerWidth >= DESKTOP; }
 
   btns.forEach(b => b.addEventListener('click', () => {
-    const t = document.getElementById('step-' + b.dataset.step);
-    if (t) {
-      setActiveStep(b.dataset.step);
-      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const card = document.getElementById('step-' + b.dataset.step);
+    if (!card) return;
+
+    btns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
+
+    if (isDesktop()) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
     }
   }));
+
+  /* ── Mobile prev/next nav ── */
+  const cards = stream.querySelectorAll('.manu-step');
+  const navPrev = document.querySelector('.manu-nav-btn[data-dir="prev"]');
+  const navNext = document.querySelector('.manu-nav-btn[data-dir="next"]');
+  const navPos  = document.querySelector('.manu-nav-pos');
+
+  if (cards.length && navPrev && navNext && navPos) {
+    function currentIndex() {
+      const sLeft = stream.scrollLeft;
+      let best = 0, bestDist = Infinity;
+      cards.forEach((c, i) => {
+        const dist = Math.abs(c.offsetLeft - sLeft);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      });
+      return best;
+    }
+
+    function updateNavState() {
+      const i = currentIndex();
+      navPos.textContent = (i + 1) + ' / ' + cards.length;
+      navPrev.setAttribute('aria-disabled', i === 0 ? 'true' : 'false');
+      navNext.setAttribute('aria-disabled', i === cards.length - 1 ? 'true' : 'false');
+    }
+
+    function goto(i) {
+      i = Math.max(0, Math.min(cards.length - 1, i));
+      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    }
+
+    navPrev.addEventListener('click', () => goto(currentIndex() - 1));
+    navNext.addEventListener('click', () => goto(currentIndex() + 1));
+
+    let scrollT;
+    stream.addEventListener('scroll', () => {
+      clearTimeout(scrollT);
+      scrollT = setTimeout(updateNavState, 80);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateNavState);
+    updateNavState();
+  }
 })();
 /* ── Pantry typer (storyboard feature block) ── */
 (() => {
@@ -271,13 +297,23 @@
     const content = faq.querySelector('.a');
     if (!content) return;
 
-    faq.setAttribute('open', '');
-    const h = content.scrollHeight;
+    if (reduced) { faq.setAttribute('open', ''); return; }
 
+    // Pin to zero before native expand to avoid the flicker race
+    content.style.overflow = 'hidden';
+    content.style.height = '0px';
+    content.style.opacity = '0';
+    faq.setAttribute('open', '');
+
+    // Force reflow so the next animation has a clean starting state
+    void content.offsetHeight;
+
+    const target = content.scrollHeight;
     content.animate(
-      [{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
+      [{ height: '0px', opacity: 0 }, { height: target + 'px', opacity: 1 }],
       { duration: DURATION_OPEN, easing: EASING, fill: 'forwards' }
     ).finished.then(() => {
+      content.style.overflow = '';
       content.style.height = '';
       content.style.opacity = '';
     });
@@ -287,13 +323,19 @@
     const content = faq.querySelector('.a');
     if (!content) return;
 
+    if (reduced) { faq.removeAttribute('open'); return; }
+
     const h = content.getBoundingClientRect().height;
+    content.style.overflow = 'hidden';
+    content.style.height = h + 'px';
+    void content.offsetHeight;
 
     content.animate(
       [{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
       { duration: DURATION_CLOSE, easing: EASING, fill: 'forwards' }
     ).finished.then(() => {
       faq.removeAttribute('open');
+      content.style.overflow = '';
       content.style.height = '';
       content.style.opacity = '';
     });

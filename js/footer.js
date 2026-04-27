@@ -18,7 +18,6 @@
         <h4>Product</h4>
         <ul>
           <li><a href="${BASE}index.html#features">Features</a></li>
-          <li><a href="${BASE}pricing.html">Pricing</a></li>
           <li><a href="${BASE}lyftora-coach-ai.html">Coach AI</a></li>
           <li><a href="${BASE}index.html#faq">FAQ</a></li>
         </ul>
@@ -30,6 +29,8 @@
           <li><a href="#">Careers</a></li>
           <li><a href="#">Press</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
+          <li><a href="mailto:hello@lyftora.in">hello@lyftora.in</a></li>
+          <li><a href="mailto:support@lyftora.in">support@lyftora.in</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -43,7 +44,7 @@
     </div>
     <div class="foot-bottom">
       <div>&copy; ${new Date().getFullYear()} Lyftora &middot; Made with care.</div>
-      <div>v1.0 &middot; Shipping May 29</div>
+      <div>Pre-launch &middot; Coming soon</div>
     </div>
   </div>
 </footer>`;
