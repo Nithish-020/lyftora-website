@@ -1,0 +1,413 @@
+@import url("./tokens.css");
+
+/* ============================================
+   Lyftora — Privacy Policy Page Styles
+   Tokens live in design-tokens/tokens.json and
+   are generated to css/tokens.css. Do not redeclare.
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: clip;
+  cursor: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+ul {
+  list-style: none;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- Custom cursor ---------- */
+.cursor,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width .18s ease, height .18s ease, background .18s ease, opacity .2s;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+}
+
+.cursor.is-hover {
+  width: 20px;
+  height: 20px;
+  background: var(--lime);
+}
+
+.cursor-ring.is-hover {
+  width: 56px;
+  height: 56px;
+}
+
+@media (hover: none),
+(max-width: 720px) {
+  body {
+    cursor: auto;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+/* ---------- Privacy Hero ---------- */
+.privacy-hero {
+  padding-top: calc(100px + var(--s-8));
+  padding-bottom: var(--s-8);
+  text-align: center;
+}
+
+.privacy-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.privacy-hero h1 span {
+  color: var(--coral);
+}
+
+.privacy-hero .privacy-updated {
+  margin-top: var(--s-4);
+  font-size: 14px;
+  font-family: var(--mono);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Privacy Content Layout ---------- */
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--s-8);
+  padding-bottom: var(--s-9);
+  align-items: start;
+}
+
+/* ---------- Table of Contents (Sidebar) ---------- */
+.privacy-toc {
+  position: sticky;
+  top: 100px;
+  padding-top: var(--s-4);
+}
+
+.privacy-toc-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: var(--s-4);
+}
+
+.privacy-toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+
+.privacy-toc li {
+  counter-increment: toc;
+}
+
+.privacy-toc a {
+  display: block;
+  padding: var(--s-2) 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color .2s;
+  line-height: 1.4;
+}
+
+.privacy-toc a::before {
+  content: counter(toc, decimal-leading-zero) " ";
+  font-family: var(--mono);
+  font-size: 11px;
+  color: color-mix(in srgb, var(--muted) 60%, transparent);
+  margin-right: 6px;
+}
+
+.privacy-toc a:hover,
+.privacy-toc a.is-active {
+  color: var(--ink);
+}
+
+.privacy-toc a.is-active::before {
+  color: var(--coral);
+}
+
+/* ---------- Privacy Body ---------- */
+.privacy-body {
+  max-width: 780px;
+}
+
+.privacy-section {
+  padding-top: var(--s-7);
+  padding-bottom: var(--s-7);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.privacy-section:last-child {
+  border-bottom: none;
+}
+
+.privacy-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: var(--s-5);
+}
+
+.privacy-section h3 {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: var(--s-6);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.01em;
+}
+
+.privacy-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  margin-bottom: var(--s-4);
+}
+
+.privacy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section ul {
+  list-style: none;
+  margin-bottom: var(--s-4);
+  padding-left: 0;
+}
+
+.privacy-section li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  margin-bottom: var(--s-2);
+}
+
+.privacy-section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.privacy-section strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.privacy-section a {
+  color: var(--coral);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+
+.privacy-section a:hover {
+  color: var(--ink);
+}
+
+/* ---------- Contact card ---------- */
+.privacy-contact {
+  margin-top: var(--s-6);
+  padding: var(--s-6);
+  background: var(--cream-2);
+  border-radius: var(--r-md);
+  border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.privacy-contact p {
+  margin-bottom: var(--s-2);
+}
+
+.privacy-contact a {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: var(--s-9) 0 var(--s-6);
+  margin-top: var(--s-8);
+}
+
+.foot-brand-big {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--s-7);
+}
+
+.foot-col h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: var(--s-4);
+}
+
+.foot-col li + li {
+  margin-top: var(--s-2);
+}
+
+.foot-col a {
+  font-size: 15px;
+  transition: color .2s;
+}
+
+.foot-col a:hover {
+  color: var(--lime);
+}
+
+.foot-bottom {
+  margin-top: var(--s-9);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .privacy-toc {
+    position: relative;
+    top: 0;
+    padding: var(--s-5) var(--s-5);
+    background: var(--cream-2);
+    border-radius: var(--r-md);
+    margin-bottom: var(--s-6);
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-6);
+  }
+
+  .privacy-hero {
+    padding-top: calc(80px + var(--s-7));
+    padding-bottom: var(--s-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
