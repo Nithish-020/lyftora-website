@@ -384,12 +384,11 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
   });
 })();
 
-/* ── Waitlist form stub (Phase 3 will wire to /api/waitlist + Resend) ── */
+/* ── Waitlist form — wired to /api/waitlist + Resend ── */
 (() => {
   const forms = document.querySelectorAll('.waitlist-form');
   if (!forms.length) return;
 
-  // Require local@domain.tld — TLD must be 2+ alphabetic characters
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(value.trim());
   }
@@ -415,14 +414,38 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
     }
   }
 
-  forms.forEach(form => {
-    const input  = form.querySelector('input[name="email"]');
-    const status = form.parentElement.querySelector('.waitlist-status');
+  function showSuccess(wrapper, email) {
+    wrapper.classList.add('is-submitted');
 
-    // Clear error state the moment the user starts retyping
+    /* Inject success card if not already present */
+    if (!wrapper.querySelector('.waitlist-success')) {
+      const card = document.createElement('div');
+      card.className = 'waitlist-success';
+      card.setAttribute('role', 'status');
+      card.setAttribute('aria-live', 'polite');
+      card.innerHTML = `
+        <div class="waitlist-success__check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="11"/>
+            <polyline class="check-path" points="5,12 10,17 19,7"/>
+          </svg>
+        </div>
+        <p class="waitlist-success__headline">You're on the list!</p>
+        <p class="waitlist-success__sub">We'll reach out to <strong>${email}</strong> when we launch.</p>
+      `;
+      wrapper.appendChild(card);
+    }
+  }
+
+  forms.forEach(form => {
+    const wrapper = form.closest('.waitlist');
+    const input   = form.querySelector('input[name="email"]');
+    const status  = wrapper ? wrapper.querySelector('.waitlist-status') : null;
+    const btn     = form.querySelector('button[type="submit"]');
+
     input.addEventListener('input', () => clearError(input, form, status));
 
-    // Validate on blur so users get feedback before hitting submit
     input.addEventListener('blur', () => {
       const val = input.value.trim();
       if (val && !isValidEmail(val)) {
@@ -430,7 +453,7 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
       }
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = input.value.trim();
 
@@ -439,7 +462,6 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
         input.focus();
         return;
       }
-
       if (!isValidEmail(email)) {
         setError(input, form, status, 'Please enter a valid email address.');
         input.focus();
@@ -447,12 +469,34 @@ document.querySelectorAll('.btn-primary, #buy-btn').forEach(b => {
       }
 
       clearError(input, form, status);
-      console.info('[waitlist stub]', { email });
-      if (status) {
-        status.textContent = "Thanks! We'll be in touch.";
-        status.classList.add('is-success');
+
+      /* Loading state */
+      btn.disabled = true;
+      btn.dataset.originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="waitlist-spinner" aria-hidden="true"></span>Sending…';
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+
+        /* Success */
+        if (wrapper) showSuccess(wrapper, email);
+        form.reset();
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.innerHTML = btn.dataset.originalText;
+        setError(input, form, status, err.message || 'Something went wrong. Please try again.');
       }
-      form.reset();
     });
   });
 })();

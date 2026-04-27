@@ -55,10 +55,8 @@ export async function onRequestPost(context) {
     if (count >= 5) {
       return json({ ok: false, error: 'rate_limited' }, 429);
     }
-    /* Fire-and-forget the KV increment so it doesn't add latency */
-    ctx.waitUntil(
-      env.RATE_LIMIT_KV.put(rlKey, String(count + 1), { expirationTtl: 3600 })
-    );
+    /* Await the KV put for race-free rate limiting */
+    await env.RATE_LIMIT_KV.put(rlKey, String(count + 1), { expirationTtl: 3600 });
   } catch (err) {
     /* KV failure is non-fatal — log and continue */
     console.error('[waitlist] KV error:', err);
@@ -85,10 +83,11 @@ export async function onRequestPost(context) {
   const user_agent = (request.headers.get('User-Agent') || '').slice(0, 300);
 
   /* Insert into Supabase */
-  if (!env.SUPABASE_URL) {
-    console.warn('[waitlist] SUPABASE_URL not set — using hardcoded fallback project URL');
+  const supabaseUrl = env.SUPABASE_URL;
+  if (!supabaseUrl) {
+    console.error('[waitlist] SUPABASE_URL is not set');
+    return json({ ok: false, error: 'server_error' }, 500);
   }
-  const supabaseUrl = env.SUPABASE_URL || 'https://obhpbaapxsjwrhzvfjnl.supabase.co';
   const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseKey) {
