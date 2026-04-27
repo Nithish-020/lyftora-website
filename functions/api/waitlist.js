@@ -19,7 +19,10 @@ function json(data, status = 200) {
 
 /* ── OPTIONS (CORS preflight) ── */
 export async function onRequestOptions() {
-  return new Response(null, { status: 204, headers: CORS_HEADERS });
+  return new Response(null, {
+    status: 204,
+    headers: { ...CORS_HEADERS, 'Cache-Control': 'no-store' },
+  });
 }
 
 /* ── POST /api/waitlist ── */
