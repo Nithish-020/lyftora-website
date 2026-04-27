@@ -54,3 +54,19 @@ python3 -m http.server 8000
 ## Custom domain
 
 Dashboard → your Pages project → **Custom domains** → add `lyftora.com` and `www.lyftora.com`. Cloudflare handles the DNS + SSL.
+
+## Deployment
+
+Cloudflare Pages auto-deploys from `master`. Pull requests get preview URLs automatically.
+
+**Environment variables** must be set in Cloudflare Dashboard → Workers & Pages → `lyftora-website` → Settings → Variables and Secrets. Never commit secrets to the repo.
+
+Required secrets (set as Secrets, not plain text):
+- `SUPABASE_URL` — Supabase project REST URL
+- `SUPABASE_SERVICE_ROLE_KEY` — Supabase service role key (NOT the anon key)
+- `RESEND_API_KEY` — Resend API key with Sending access
+- `RESEND_FROM` — Verified from address e.g. `Lyftora <hello@lyftora.in>`
+- `IP_SALT` — 32+ character random string for IP hashing
+
+Required KV binding:
+- Variable name: `RATE_LIMIT_KV` → KV namespace: `lyftora-rate-limit`

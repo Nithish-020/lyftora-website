@@ -15,30 +15,16 @@
         </p>
       </div>
       <div class="foot-col">
-        <h4>Product</h4>
+        <h3>Product</h3>
         <ul>
-          <li><a href="${BASE}index.html#features">Features</a></li>
           <li><a href="${BASE}lyftora-coach-ai.html">Coach AI</a></li>
-          <li><a href="${BASE}index.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
-          <li><a href="#">Manifesto</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
-          <li><a href="mailto:hello@lyftora.in">hello@lyftora.in</a></li>
           <li><a href="mailto:support@lyftora.in">support@lyftora.in</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
-          <li><a href="#">X / Twitter</a></li>
         </ul>
       </div>
     </div>
