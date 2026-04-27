@@ -17,16 +17,13 @@
       <div class="foot-col">
         <h3>Product</h3>
         <ul>
-          <li><a href="${BASE}index.html#features">Features</a></li>
           <li><a href="${BASE}lyftora-coach-ai.html">Coach AI</a></li>
-          <li><a href="${BASE}index.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h3>Company</h3>
         <ul>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
-          <li><a href="mailto:hello@lyftora.in">hello@lyftora.in</a></li>
           <li><a href="mailto:support@lyftora.in">support@lyftora.in</a></li>
         </ul>
       </div>
