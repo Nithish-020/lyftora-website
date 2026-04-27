@@ -34,7 +34,7 @@ export async function onRequestPost(context) {
   try {
     body = await request.json();
   } catch {
-    return json({ ok: false, error: 'invalid_email' }, 400);
+    return json({ ok: false, error: 'invalid_request' }, 400);
   }
 
   const email = (typeof body.email === 'string' ? body.email : '').trim().toLowerCase();
@@ -67,6 +67,7 @@ export async function onRequestPost(context) {
   /* Compute ip_hash: SHA-256(ip + IP_SALT), first 16 hex chars */
   let ip_hash = null;
   try {
+    if (!env.IP_SALT) console.warn('[waitlist] IP_SALT not set — ip_hash is unsalted');
     const salt = env.IP_SALT || '';
     const buf = await crypto.subtle.digest(
       'SHA-256',
@@ -84,6 +85,9 @@ export async function onRequestPost(context) {
   const user_agent = (request.headers.get('User-Agent') || '').slice(0, 300);
 
   /* Insert into Supabase */
+  if (!env.SUPABASE_URL) {
+    console.warn('[waitlist] SUPABASE_URL not set — using hardcoded fallback project URL');
+  }
   const supabaseUrl = env.SUPABASE_URL || 'https://obhpbaapxsjwrhzvfjnl.supabase.co';
   const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -128,8 +132,8 @@ export async function onRequestPost(context) {
       const contentRange = countRes.headers.get('Content-Range') || '';
       const match = contentRange.match(/\/(\d+)$/);
       if (match) position = parseInt(match[1], 10);
-    } catch {
-      /* position is optional — swallow */
+    } catch (err) {
+      console.warn('[waitlist] count query failed, position omitted:', err);
     }
   } catch (err) {
     console.error('[waitlist] Supabase fetch error:', err);
